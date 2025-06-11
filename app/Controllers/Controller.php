@@ -15,7 +15,7 @@ class Controller {
         $this->twig = new Environment($loader);
     }
 
-    protected function render(string $view, array $params = []): string
+    protected function render(string $view, array $params = []): ?string
     {
         if(!str_ends_with($view, ".html.twig"))
             $view .= ".html.twig";
@@ -31,5 +31,6 @@ class Controller {
                 $e->getTraceAsString()
             );
         }
+        return null;
     }
 }
