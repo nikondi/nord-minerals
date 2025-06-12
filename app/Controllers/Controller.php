@@ -11,7 +11,7 @@ class Controller {
 
     public function __construct()
     {
-        $loader = new FilesystemLoader(BASE_PATH.'/templates/');
+        $loader = new FilesystemLoader(BASE_PATH.'/resources/views/');
         $this->twig = new Environment($loader);
     }
 

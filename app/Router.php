@@ -25,7 +25,7 @@ class Router {
 
     protected array $routes = [];
 
-    protected function addRoute(string $uri, string|array $handler, $method = 'GET'): void
+    protected function addRoute(string $uri, string|array|Closure $handler, $method = 'GET'): void
     {
         $uri = rtrim(ltrim($uri, '/'), '/');
         $uri = str_replace(['///', '//'], '/', $uri);
@@ -51,8 +51,6 @@ class Router {
 
         $handler = $instance->routes[$instance->uri]['handler'];
 
-        if($handler instanceof Closure)
-            return $handler();
         if(is_string($handler))
             return (new $handler)();
 
