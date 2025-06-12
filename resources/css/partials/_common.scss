@@ -1,0 +1,29 @@
+body {
+  background-color: #425666;
+  font-family: 'Akzidenz-Grotesk Pro', sans-serif;
+}
+
+.container {
+  max-width: var(--container-width, 1260px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
+.small-container {
+  --container-width: 1050px;
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+
+body.ohidden {
+  overflow-y: scroll;
+  position: fixed;
+  width: 100%;
+}

@@ -1,0 +1,28 @@
+<div class="top-header">
+    <img src="/assets/img/logo-big.svg" alt="" class="top-header__logo--desktop">
+    <img src="/assets/img/logo-small.svg" alt="" class="top-header__logo--mobile">
+</div>
+
+<button type="button" class="burger-button">
+    <span></span>
+</button>
+
+<header class="header">
+    <div class="container nav-container">
+        <div class="top-nav"></div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#" class="active">О нас</a></li>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="#">Проекты</a></li>
+                <li><a href="#">Партнеры</a></li>
+                <li><a href="#">Новости</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="bottom-nav">
+            {% include 'components/socials.html.twig' %}
+            <div class="header-copyright">All copyrights reserved, 2022</div>
+        </div>
+    </div>
+</header>
