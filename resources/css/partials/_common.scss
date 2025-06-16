@@ -1,6 +1,7 @@
 body {
   background-color: #425666;
   font-family: 'Akzidenz-Grotesk Pro', sans-serif;
+  min-width: 320px;
 }
 
 .container {
@@ -26,4 +27,12 @@ body.ohidden {
   overflow-y: scroll;
   position: fixed;
   width: 100%;
+}
+
+.copyright {
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  color: #ffffff;
 }

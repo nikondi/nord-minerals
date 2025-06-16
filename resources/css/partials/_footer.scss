@@ -1,0 +1,132 @@
+.footer {
+  background-color: #425666;
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.footer-logo {
+  --container-width: 1260px;
+}
+
+.footer-bottom {
+  --container-width: 1160px;
+  display: flex;
+  column-gap: 40px;
+  margin-top: 25px;
+  align-items: flex-start;
+}
+
+.footer-info {
+  display: flex;
+  column-gap: 40px;
+  flex: 1;
+}
+
+.footer-contacts {
+  flex: 1;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 140%;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    a {
+      color: inherit;
+    }
+  }
+}
+
+.footer-socials {
+  align-self: flex-end;
+  .copyright {
+    margin-top: 26px;
+  }
+}
+
+.footer-menu {
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+
+  > ul {
+    list-style: none;
+    > li {
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.footer-title {
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  margin-bottom: 10px;
+  a {
+    text-decoration: none;
+    font: inherit;
+    color: inherit;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .footer-bottom,
+  .footer-info {
+    flex-direction: column;
+    row-gap: 24px;
+  }
+  .footer-menu {
+    columns: 2;
+  }
+  .footer-contacts {
+    .footer-title {
+      display: none;
+    }
+    &__list {
+      flex-wrap: wrap;
+      row-gap: 24px;
+    }
+    &__item {
+      position: relative;
+      padding-left: 36px;
+      min-width: 220px;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 34px;
+        background: {
+          image: url("/assets/img/footer-contacts-marker.svg");
+          repeat: no-repeat;
+        };
+      }
+    }
+  }
+  .footer-socials {
+    align-self: flex-start;
+    .copyright {
+      margin-top: 24px;
+    }
+  }
+}

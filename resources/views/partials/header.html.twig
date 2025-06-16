@@ -1,6 +1,8 @@
 <div class="top-header">
-    <img src="/assets/img/logo-big.svg" alt="" class="top-header__logo--desktop">
-    <img src="/assets/img/logo-small.svg" alt="" class="top-header__logo--mobile">
+    <a href="/">
+        <img src="/assets/img/logo-big.svg" alt="" class="top-header__logo--desktop">
+        <img src="/assets/img/logo-small.svg" alt="" class="top-header__logo--mobile">
+    </a>
 </div>
 
 <button type="button" class="burger-button">
@@ -22,7 +24,7 @@
         </nav>
         <div class="bottom-nav">
             {% include 'components/socials.html.twig' %}
-            <div class="header-copyright">All copyrights reserved, 2022</div>
+            {% include 'components/copyright.html.twig' %}
         </div>
     </div>
 </header>
