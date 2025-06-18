@@ -16,33 +16,21 @@
                 <button class="big-slider-arrow big-slider-arrow--prev"></button>
                 <div class="wf-slider swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide wf-slide">
-                            <a href="#" class="wf-slide__link">
-                                <div class="wf-slide__text">
-                                    <div class="wf-slide__title">Инжиниринг<br />и проектирование</div>
-                                    <div class="wf-slide__description">
-                                        Инженеры Nord Minerals разрабатывают технологические решения и автоматизируют процессы на всех этапах проекта
+                        {% for i in 1..3 %}
+                            <div class="swiper-slide wf-slide">
+                                <a href="#" class="wf-slide__link">
+                                    <div class="wf-slide__text">
+                                        <div class="wf-slide__title">Инжиниринг<br />и проектирование</div>
+                                        <div class="wf-slide__description">
+                                            Инженеры Nord Minerals разрабатывают технологические решения и автоматизируют процессы на всех этапах проекта
+                                        </div>
                                     </div>
-                                </div>
-                                <svg width="39" height="40" class="wf-slide__arrow">
-                                    <use xlink:href="/assets/img/arrows/round-arrows.svg#right"></use>
-                                </svg>
-                            </a>
-                        </div>
-                        <div class="swiper-slide wf-slide">
-                            <a href="#" class="wf-slide__link">
-                                <div class="wf-slide__text">
-                                    <div class="wf-slide__title">Инжиниринг<br />и проектирование</div>
-                                    <div class="wf-slide__description">
-                                        Инженеры Nord Minerals разрабатывают технологические решения и автоматизируют процессы на всех этапах проекта
-                                    </div>
-                                </div>
-                                <svg width="39" height="41" viewBox="0 0 39 41" fill="none" xmlns="http://www.w3.org/2000/svg" class="wf-slide__arrow">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M19.5 34.793C27.0387 34.793 33.15 28.525 33.15 20.793C33.15 13.061 27.0387 6.79297 19.5 6.79297C11.9613 6.79297 5.85002 13.061 5.85002 20.793C5.85002 28.525 11.9613 34.793 19.5 34.793ZM19.5 36.793C28.1157 36.793 35.1 29.6295 35.1 20.793C35.1 11.9564 28.1157 4.79297 19.5 4.79297C10.8844 4.79297 3.90002 11.9564 3.90002 20.793C3.90002 29.6295 10.8844 36.793 19.5 36.793ZM16.148 13.2365C16.5287 12.846 17.1461 12.846 17.5268 13.2365L24.2048 20.0857C24.3952 20.281 24.4904 20.537 24.4904 20.793C24.4904 21.0489 24.3952 21.3049 24.2048 21.5002L17.5268 28.3494C17.1461 28.74 16.5287 28.74 16.148 28.3494C15.7672 27.9589 15.7672 27.3258 16.148 26.9352L22.1367 20.793L16.148 14.6507C15.7672 14.2602 15.7672 13.627 16.148 13.2365Z" fill="#65C9DA"/>
-                                </svg>
-                            </a>
-                        </div>
-
+                                    <svg width="39" height="40" class="wf-slide__arrow">
+                                        <use xlink:href="/assets/img/arrows/round-arrows.svg#right"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        {% endfor %}
                     </div>
 
                 </div>
@@ -92,6 +80,44 @@
                 </button>
             </div>
             <div class="slider-pagination swiper-pagination"></div>
+        </div>
+    </section>
+
+
+    <section class="geography">
+        <div class="geography-wrapper">
+            <div class="geography-map">
+                <img src="/assets/img/geography.png" class="geography-background" alt="">
+
+                <div class="geography-dots">
+                    {% for dot in [
+                        {top: 752, left: 300, title: 'Название предприятия'},
+                        {top: 218, left: 476, title: 'Название предприятия'},
+                        {top: 110, left: 620, title: 'Название предприятия'},
+                        {top: 78, left: 736, title: 'Название предприятия'},
+                        {top: 159, left: 760, title: 'Название предприятия'},
+                        {top: 112, left: 800, title: 'Название предприятия'},
+                        {top: 215, left: 832, title: 'Название предприятия'},
+                        {top: 200, left: 1012, title: 'Название предприятия'},
+                        {top: 195, left: 1112, title: 'Название предприятия'},
+                    ] %}
+                        <div class="geography-dot" style="top: {{ dot.top }}px; left: {{ dot.left }}px">
+                            <div class="geography-dot__inner">
+                                <div>{{ dot.title }}</div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="container welcome-block-container geography-inner">
+                <div class="block-heading">География</div>
+                <div class="geography-infographic">
+                    <div class="geography-infographic__count">
+                        <img src="/assets/img/pages/welcome/geo-count.svg" alt="">{# TODO: В дизайне цифра блюрит фон. Разобраться #}
+                    </div>
+                    <div class="geography-infographic__text">ОФИСОВ в Центральной, <br />Юго-Восточной Азии<br/>и Африке</div>
+                </div>
+            </div>
         </div>
     </section>
 {% endblock %}

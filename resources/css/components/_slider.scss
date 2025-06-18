@@ -101,7 +101,7 @@
   .swiper-pagination-bullet {
     transition: {
       property: width, background-color;
-      duration: .4s;
+      duration: .3s;
     };
     cursor: pointer;
     &.swiper-pagination-bullet-active {
@@ -114,7 +114,7 @@
     &.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
       transition: {
         property: width, background-color, left, transform, opacity;
-        duration: .4s;
+        duration: .3s;
       };
     }
     .swiper-pagination-bullet {
