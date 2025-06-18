@@ -44,7 +44,7 @@
 .wf-slide {
   transition: {
     duration: 0.3s;
-    property: opacity, backdrop-filter, background;
+    property: opacity, backdrop-filter, background-position;
   };
   overflow: hidden;
   height: auto;
@@ -52,25 +52,15 @@
   border-radius: 4px;
   padding: 16px;
 
-
-  &:before {
-    content: "";
-    background: linear-gradient(90deg, #4F677A 0%, rgba(66, 86, 102, 0) 100%);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.3s;
-    z-index: 0;
-  }
+  background: {
+    image: linear-gradient(90deg, #4F677A, rgba(66, 86, 102, 0), rgba(66, 86, 102, 0));
+    size: 200% 100%;
+    position: 100% 0;
+  };
 
   &:hover {
     backdrop-filter: blur(16px);
-    &:before {
-      opacity: 1;
-    }
+    background-position: 0 0;
   }
 
   &:not(.swiper-slide-active) {
@@ -162,9 +152,7 @@
   .wf-slide {
     padding: 24px 0 16px 0;
     border: 0;
-    &:before {
-      display: none;
-    }
+    background: none;
     &:hover {
       backdrop-filter: blur(0);
     }
@@ -188,6 +176,78 @@
 
     video {
       height: 430px;
+    }
+  }
+}
+
+.welcome-about {
+  height: 625px;
+  padding-top: 40px;
+  color: #FFFFFF;
+  position: relative;
+
+  &__background {
+    background: {
+      image: url("/assets/img/pages/welcome/about.png");
+      size: cover;
+      repeat: no-repeat;
+      position: right center;
+    };
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    &:before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      mix-blend-mode: overlay;
+      background-color: rgba(#425666, .5);
+    }
+  }
+
+  &__info {
+    margin-top: 29px;
+  }
+  &__text {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    max-width: 490px;
+  }
+  &__link {
+    margin-top: 32px;
+  }
+}
+.welcome-about-container {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 145px;
+  --container-width: 1050px;
+}
+
+@media (max-width: 767px) {
+  .welcome-about {
+    height: 415px;
+    padding-top: 24px;
+    &__background {
+      background-position: center;
+      &:before {
+        mix-blend-mode: initial;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+    }
+    &__info {
+      margin-top: 16px;
+    }
+    &__link {
+      margin-top: 16px;
     }
   }
 }

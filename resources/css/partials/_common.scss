@@ -36,3 +36,58 @@ body.ohidden {
   letter-spacing: 0.05em;
   color: #ffffff;
 }
+
+.btn {
+  border: 1px solid #FFFFFF;
+  //border-image-source: linear-gradient(180deg, #FFFFFF 0%, #65C9DA 100%); // TODO: Разобраться с отображением градиентной границы
+  display: inline-flex;
+  color: #65CADA;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: 0.05em;
+
+  border-radius: 4px;
+  padding-right: 12px;
+  padding-left: 12px;
+  gap: 10px;
+
+  position: relative;
+
+  transition: {
+    duration: .3s;
+    property: backdrop-filter, background-position, color;
+  };
+
+  background: {
+    image: linear-gradient(90deg, #65C9DA, rgba(66, 86, 102, 0), rgba(66, 86, 102, 0));
+    size: 200% 100%;
+    position: 100% 0;
+  };
+
+  &:hover {
+    background-position: 0 0;
+    color: #FFFFFF;
+    backdrop-filter: blur(16px);
+  }
+}
+
+.block-heading {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 56px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  .block-heading {
+    font-size: 24px;
+    line-height: 100%;
+  }
+}
