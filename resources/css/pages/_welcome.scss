@@ -1,3 +1,7 @@
+.welcome-block-container {
+  --container-width: 1050px;
+}
+
 .welcome-first {
   padding-top: 35px;
   padding-bottom: 50px;
@@ -33,12 +37,13 @@
 
 .wf-slider-container {
   --container-width: 1240px;
+  --swiper-pagination-bottom: 0;
+  position: relative;
+  padding-bottom: 24px;
 }
 .wf-slider-wrapper {
   display: flex;
-}
-.wf-slider {
-  width: calc(100% - 192px);
+  column-gap: 39px;
 }
 
 .wf-slide {
@@ -78,6 +83,7 @@
   }
   &__arrow {
     align-self: flex-end;
+    color: #65C9DA;
   }
 
   &__title {
@@ -137,14 +143,11 @@
   }
   .wf-slider-container {
     margin-top: 270px;
-    .slider-pagination {
-      margin-top: 16px;
-    }
+    padding-bottom: 37px;
   }
   .wf-slider-wrapper {
     margin: 0 -16px;
     padding: 0 16px;
-    overflow: hidden;
     .big-slider-arrow {
       display: none;
     }
@@ -185,6 +188,10 @@
   padding-top: 40px;
   color: #FFFFFF;
   position: relative;
+
+  .block-heading {
+    color: #FFFFFF;
+  }
 
   &__background {
     background: {
@@ -229,8 +236,8 @@
   display: flex;
   flex-wrap: wrap;
   column-gap: 145px;
-  --container-width: 1050px;
 }
+
 
 @media (max-width: 767px) {
   .welcome-about {
@@ -251,3 +258,80 @@
     }
   }
 }
+
+/* CLIENTS */
+.clients {
+  background-color: #BCCBD6;
+  padding-top: 36px;
+  padding-bottom: 67px;
+}
+.clients-slider-container {
+  --container-width: 1260px;
+  margin-top: 48px;
+  .slider-arrow {
+    color: #27B0C7;
+  }
+  .slider-pagination {
+    display: none;
+  }
+}
+
+.clients-slider {
+  .swiper-wrapper {
+    align-items: center;
+  }
+}
+
+.clients-slider-wrapper {
+  display: flex;
+  column-gap: 25px;
+}
+.client-slide {
+  height: auto;
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.client-link {
+  img {
+    filter: grayscale(100%);
+    transition: .2s filter;
+  }
+  &:hover img {
+    filter: grayscale(0%);
+  }
+}
+
+@media (max-width: 767px) {
+  .clients {
+    padding-top: 24px;
+    padding-bottom: 40px;
+  }
+  .client-slide {
+    width: auto;
+  }
+  .clients-slider-container {
+    margin-top: 16px;
+    padding-bottom: 32px;
+    position: relative;
+    --swiper-pagination-bottom: 0;
+
+    .slider-arrow {
+      display: none;
+    }
+    .slider-pagination {
+      display: block;
+    }
+  }
+  .clients-slider-wrapper {
+    margin: 0 -16px;
+    padding: 0 16px;
+    overflow: hidden;
+  }
+  .clients-slider {
+    overflow: visible;
+  }
+}
+/* CLIENTS */

@@ -31,10 +31,17 @@ function initBurger() {
   });
 
   const media = window.matchMedia("(min-width: 768px)");
-  media.addEventListener('change', () => {
-    if(media.matches)
+  const checkMedia = () => {
+    if(media.matches) {
+      mobileMenu.classList.remove("inited");
       closeMenu();
-  });
+    }
+    else {
+      mobileMenu.classList.add("inited");
+    }
+  }
+  setTimeout(checkMedia, 0);
+  media.addEventListener('change', checkMedia);
 
   document.addEventListener("keyup", (e) => {
     if(e.key === "Escape")

@@ -6,14 +6,14 @@
             <video src="/assets/video/welcome-background.mp4" muted autoplay></video>
         </div>
 
-        <div class="container welcome-first-container">
+        <div class="container welcome-block-container">
             <div class="welcome-first__title">НАДЕЖНЫЙ ПОСТАВЩИК</div>
             <div class="welcome-first__subtitle">технологического оборудования<br />для переработки и обогащения полезных ископаемых</div>
         </div>
 
-        <div class="container wf-slider-container">
+        <div class="container wf-slider-container slider-wrapper">
             <div class="wf-slider-wrapper">
-                <div class="big-slider-arrow big-slider-arrow--prev"></div>
+                <button class="big-slider-arrow big-slider-arrow--prev"></button>
                 <div class="wf-slider swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide wf-slide">
@@ -24,8 +24,8 @@
                                         Инженеры Nord Minerals разрабатывают технологические решения и автоматизируют процессы на всех этапах проекта
                                     </div>
                                 </div>
-                                <svg width="39" height="41" viewBox="0 0 39 41" fill="none" xmlns="http://www.w3.org/2000/svg" class="wf-slide__arrow">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M19.5 34.793C27.0387 34.793 33.15 28.525 33.15 20.793C33.15 13.061 27.0387 6.79297 19.5 6.79297C11.9613 6.79297 5.85002 13.061 5.85002 20.793C5.85002 28.525 11.9613 34.793 19.5 34.793ZM19.5 36.793C28.1157 36.793 35.1 29.6295 35.1 20.793C35.1 11.9564 28.1157 4.79297 19.5 4.79297C10.8844 4.79297 3.90002 11.9564 3.90002 20.793C3.90002 29.6295 10.8844 36.793 19.5 36.793ZM16.148 13.2365C16.5287 12.846 17.1461 12.846 17.5268 13.2365L24.2048 20.0857C24.3952 20.281 24.4904 20.537 24.4904 20.793C24.4904 21.0489 24.3952 21.3049 24.2048 21.5002L17.5268 28.3494C17.1461 28.74 16.5287 28.74 16.148 28.3494C15.7672 27.9589 15.7672 27.3258 16.148 26.9352L22.1367 20.793L16.148 14.6507C15.7672 14.2602 15.7672 13.627 16.148 13.2365Z" fill="#65C9DA"/>
+                                <svg width="39" height="40" class="wf-slide__arrow">
+                                    <use xlink:href="/assets/img/arrows/round-arrows.svg#right"></use>
                                 </svg>
                             </a>
                         </div>
@@ -46,15 +46,15 @@
                     </div>
 
                 </div>
-                <div class="big-slider-arrow big-slider-arrow--next"></div>
+                <button class="big-slider-arrow big-slider-arrow--next"></button>
             </div>
-            <div class="slider-pagination"></div>
+            <div class="slider-pagination swiper-pagination"></div>
         </div>
     </section>
 
     <section class="welcome-about">
         <div class="welcome-about__background"></div>
-        <div class="container welcome-about-container">
+        <div class="container welcome-block-container welcome-about-container">
             <h2 class="block-heading">О нас</h2>
             <div class="welcome-about__info">
                 <div class="welcome-about__text">
@@ -64,6 +64,34 @@
                 </div>
                 <a href="/about" class="btn welcome-about__link">подробнее</a>
             </div>
+        </div>
+    </section>
+
+    <section class="clients">
+        <div class="container welcome-block-container">
+            <div class="block-heading">Клиенты</div>
+        </div>
+        <div class="container clients-slider-container slider-wrapper">
+            <div class="clients-slider-wrapper">
+                <button class="slider-arrow slider-arrow--prev">
+                    <svg width="40" height="40"><use xlink:href="/assets/img/arrows/round-arrows.svg#left"></use></svg>
+                </button>
+                <div class="swiper clients-slider">
+                    <div class="swiper-wrapper">
+                        {% for client in [1,2,3,1,2,3,1,2,3,1,2,3] %}
+                            <div class="swiper-slide client-slide">
+                                <a href="#" class="client-link" style="mix-blend-mode: multiply;">
+                                    <img src="/assets/img/pages/welcome/clients/{{ client }}.png" alt="">
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="slider-arrow slider-arrow--next">
+                    <svg width="40" height="40"><use xlink:href="/assets/img/arrows/round-arrows.svg#right"></use></svg>
+                </button>
+            </div>
+            <div class="slider-pagination swiper-pagination"></div>
         </div>
     </section>
 {% endblock %}

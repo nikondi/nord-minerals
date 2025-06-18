@@ -1,10 +1,14 @@
 .big-slider-arrow {
+  min-width: 56px;
   width: 56px;
   background: {
     repeat: no-repeat;
     size: 100% 100%;
     position: center;
+    color: transparent;
   };
+  border: 0;
+  padding: 0;
   cursor: pointer;
   position: relative;
 
@@ -64,26 +68,71 @@
   }
 }
 
+.slider-arrow {
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  background: none;
+  cursor: pointer;
+  transition: {
+    duration: 0.3s;
+    property: opacity, color;
+  };
+  &.swiper-button-disabled {
+    opacity: .2;
+  }
+}
+
+.slider-wrapper {
+  overflow: hidden;
+}
 
 .slider-pagination {
-  display: flex;
-  justify-content: center;
-  column-gap: 20px;
-  margin-top: 20px;
+  &.swiper-pagination-bullets {
+    --swiper-pagination-bullet-horizontal-gap: 8px;
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    --swiper-pagination-bullet-border-radius: 0;
+    --swiper-pagination-bullet-width: 5px;
+    --swiper-pagination-bullet-height: 5px;
+    --swiper-pagination-color: #65C9DA;
+    --swiper-pagination-bullet-inactive-color: #ffffff;
+  }
 
   .swiper-pagination-bullet {
-    width: 5px;
-    height: 5px;
-    background-color: #fff;
     transition: {
       property: width, background-color;
       duration: .4s;
     };
     cursor: pointer;
     &.swiper-pagination-bullet-active {
-      background-color: #65C9DA;
-      width: 20px;
+      --swiper-pagination-bullet-width: 20px;
       cursor: default;
+    }
+  }
+  &.swiper-pagination-bullets-dynamic {
+    overflow: visible;
+    &.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+      transition: {
+        property: width, background-color, left, transform, opacity;
+        duration: .4s;
+      };
+    }
+    .swiper-pagination-bullet {
+      opacity: 0;
+    }
+    .swiper-pagination-bullet-active-main {
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active-prev,
+    .swiper-pagination-bullet-active-next,
+    .swiper-pagination-bullet-active-prev-prev,
+    .swiper-pagination-bullet-active-next-next {
+      transform: none;
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active-prev-prev,
+    .swiper-pagination-bullet-active-next-next {
+      opacity: .5;
     }
   }
 }

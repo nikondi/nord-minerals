@@ -9,12 +9,17 @@
 
 .top-header {
   --container-width: 1256px;
+  .container {
+    display: flex;
+    justify-content: center;
+  }
   img {
-    margin: 0 auto;
     max-width: 100%;
     object-fit: contain;
   }
-
+  &__logo-link {
+    display: block;
+  }
   &__logo {
     &--mobile {
       display: none;
@@ -130,8 +135,11 @@
   .burger-button {
     display: flex;
   }
+  .top-header-placeholder {
+    height: 66px;
+  }
   .top-header {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -167,12 +175,13 @@
     visibility: hidden;
     transform: translateX(-100%);
 
-    transition: {
-      duration: .3s;
-      property: transform, visibility;
-      timing-function: ease-in-out;
-    };
-
+    &.inited {
+      transition: {
+        duration: .3s;
+        property: transform, visibility;
+        timing-function: ease-in-out;
+      };
+    }
     &.active {
       visibility: visible;
       transform: translateX(0);
