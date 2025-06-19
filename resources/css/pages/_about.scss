@@ -6,10 +6,12 @@
 
 @media (max-width: 767px) {
   .about-first {
-    padding-top: 24px;
-    padding-bottom: 40px;
     height: auto;
 
+    .page-heading-wrapper {
+      padding-top: 24px;
+      padding-bottom: 40px;
+    }
     &__top {
       margin: 0 -16px;
       padding-left: 16px;

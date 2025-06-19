@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <section class="page-heading services-first">
+        <div class="page-heading-wrapper">
+            <div class="page-heading-background">
+                <img src="/assets/img/pages/services/first-background.png" alt="">
+            </div>
+            <div class="container page-heading-container">
+                <h1 class="block-heading">Услуги</h1>
+                <div class="page-heading__text">
+                    EPSS-решения повышают эффективность и конкурентоспособность клиентов, предоставляя им инструменты
+                    для оптимизации энергопотребления, внедрения возобновляемых источников энергии, модернизации
+                    оборудования и соблюдения экологических стандартов.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% set services = [
+        {letter: 'E', link: '/services/single', title: 'Инжиниринг под ключ',
+            image: '/assets/img/pages/services/list/engineering.png', image_mobile: '/assets/img/pages/services/list/engineering-mobile.png',
+            description: 'Инженеры Nord Minerals разрабатывают технологические решения и&nbsp;автоматизируют процессы на&nbsp;всех этапах проекта'},
+        {letter: 'P', link: '/services/single', title: 'Поставка оборудования',
+            image: '/assets/img/pages/services/list/supply.png', image_mobile: '/assets/img/pages/services/list/supply-mobile.png',
+            description: 'Nord Minerals поставляет оборудование, запчасти и&nbsp;материалы от&nbsp;ведущих мировых производителей, обеспечивая бесперебойную работу и&nbsp;стабильную производительность'},
+        {letter: 'S', link: '/services/single', title: 'Контроль<br />и ввод в эксплуатацию',
+            image: '/assets/img/pages/services/list/control.png', image_mobile: '/assets/img/pages/services/list/control-mobile.png',
+            description: 'Специалисты Nord Minerals контролируют шефмонтажные и&nbsp;пусконаладочные работы, гарантируя, что&nbsp;оборудование работает в&nbsp;заявленных режимах'},
+        {letter: 'S', link: '/services/single', title: 'Сервисные услуги',
+            image: '/assets/img/pages/services/list/service.png', image_mobile: '/assets/img/pages/services/list/service-mobile.png',
+            description: 'Nord Minerals берет на&nbsp;себя обслуживание оборудования (в&nbsp;том&nbsp;числе того, которое было поставлено не&nbsp;нами), организует плановый и&nbsp;аварийный сервис и&nbsp;гарантирует высокий уровень&nbsp;КТГ'},
+    ] %}
+    <section class="services-list">
+        {% for service in services %}
+            {% include 'components/services/item.html.twig' %}
+        {% endfor %}
+    </section>
+{% endblock %}

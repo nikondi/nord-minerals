@@ -54,6 +54,9 @@ class Router {
         if(is_string($handler))
             return (new $handler)();
 
+        if(is_array($handler))
+            return (new $handler[0])->{$handler[1]}();
+
         return call_user_func($handler);
     }
 }

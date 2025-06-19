@@ -1,0 +1,134 @@
+@media (max-width: 767px) {
+  .services-first {
+    .page-heading-background {
+      right: -90px;
+      width: 170%;
+    }
+  }
+}
+
+.services-list {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.service-item {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: #FFFFFF;
+  height: 332px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+
+  &__letter {
+    font-weight: 400;
+    font-size: 184px;
+    line-height: 100%;
+    text-transform: uppercase;
+    border-right: 1px solid #FFFFFF;
+    min-width: 228px;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+  }
+  &__text {
+    padding-left: 82px;
+  }
+  &__title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  &__description {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    margin-top: 8px;
+    max-width: 590px;
+  }
+  &__arrow {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateY(50%);
+    color: #65C9DA;
+    opacity: 0;
+    transition: opacity .3s;
+  }
+
+  &:hover .service-item-background:after,
+  &:hover &__arrow {
+    opacity: 1;
+  }
+}
+.service-item-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(6, 33, 55, 0.7);
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(62.51deg, #27B0C7 -31.81%, #425666 104.01%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+}
+
+.service-item-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+
+@media (max-width: 767px) {
+  .service-item {
+    height: auto;
+    padding-top: 24px;
+    padding-bottom: 40px;
+    &__letter {
+      font-size: 112px;
+
+      border-right: 0;
+      border-bottom: 1px solid #FFFFFF;
+      padding-bottom: 24px;
+    }
+    &__text {
+      padding-left: 0;
+      padding-top: 24px;
+    }
+    &__arrow {
+      display: none;
+    }
+  }
+  .service-item-container {
+    flex-direction: column;
+  }
+}
