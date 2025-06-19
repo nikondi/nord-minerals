@@ -13,7 +13,7 @@ class ServiceController extends Controller {
     public function show(): string
     {
         return $this->render("pages/service/show", [
-            'title' => 'Инжиниринг под ключ',
+            'title' => 'Поставка оборудования',
         ]);
     }
 }

@@ -94,3 +94,23 @@ body.ohidden {
     line-height: 100%;
   }
 }
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 8px;
+  color: #FFFFFF;
+  text-decoration: none;
+  &:before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: {
+      image: url("/assets/img/arrows/back-arrow.svg");
+      repeat: no-repeat;
+      position: left top;
+    }
+    align-self: flex-start;
+  }
+}
