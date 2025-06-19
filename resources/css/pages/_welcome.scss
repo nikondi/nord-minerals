@@ -204,10 +204,6 @@
   color: #FFFFFF;
   position: relative;
 
-  .block-heading {
-    color: #FFFFFF;
-  }
-
   &__background {
     background: {
       image: url("/assets/img/pages/welcome/about.png");
@@ -286,6 +282,9 @@
   background-color: #BCCBD6;
   padding-top: 36px;
   padding-bottom: 67px;
+  .block-heading {
+    color: #262F36;
+  }
 }
 
 .clients-slider-container {
@@ -375,7 +374,6 @@
   background: linear-gradient(180deg, #425666 65.99%, #4F677A 100%);
 
   .block-heading {
-    color: #FFFFFF;
     padding-top: 48px;
   }
 }
@@ -593,10 +591,6 @@
 .welcome-news {
   padding-top: 15px;
   padding-bottom: 25px;
-
-  .block-heading {
-    color: #FFFFFF;
-  }
 }
 
 .wn-slider-container {

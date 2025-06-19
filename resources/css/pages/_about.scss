@@ -1,0 +1,86 @@
+.about-first {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  color: #FFFFFF;
+  overflow: hidden;
+  position: relative;
+
+  &__text {
+    margin-top: 8px;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    max-width: 700px;
+  }
+  .about-brochure {
+    margin-top: 32px;
+  }
+}
+
+.about-first-container {
+  position: relative;
+}
+.about-first-background {
+  position: absolute;
+  z-index: -1;
+  right: -92px;
+  bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .about-first {
+    padding-top: 24px;
+    padding-bottom: 40px;
+
+    &__top {
+      margin: 0 -16px;
+      padding-left: 16px;
+      padding-right: 16px;
+      position: relative;
+      height: 415px;
+      overflow: hidden;
+    }
+    .about-brochure {
+      margin-top: 40px;
+    }
+  }
+
+  .about-first-background {
+    bottom: -12px;
+  }
+}
+
+.about-brochure {
+  border: 1px solid;
+  //border-image-source: linear-gradient(180deg, #FFFFFF 0%, #65C9DA 100%);
+  padding: 24px;
+  border-radius: 4px;
+
+  &__title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-top: 8px;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+  }
+
+  &__btn {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-brochure {
+    padding: 0;
+    border: 0;
+  }
+}
