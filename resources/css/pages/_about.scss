@@ -84,3 +84,153 @@
     border: 0;
   }
 }
+
+
+.about-dates {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), #425666;
+  color: #fff;
+}
+
+.about-dates-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.about-dates-divider {
+  height: 1px;
+  background-color: #FFFFFF;
+}
+
+.about-dates-slider {
+  overflow: visible;
+  .swiper-slide {
+    padding-top: 64px;
+    padding-bottom: 96px;
+    padding-left: 16px;
+    width: auto;
+  }
+}
+
+.about-date {
+  width: 294px;
+  min-height: 180px;
+  position: relative;
+  padding-left: 14px;
+  &__year {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  &__text {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    margin-top: 8px;
+    max-width: 160px;
+  }
+
+  &__mark {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: -8px;
+    border-radius: 50%;
+    background-color: #27B0C7;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-left: 1px dashed rgba(255, 255, 255, 0.5);
+  }
+
+  &--marked &__mark {
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+    &:before {
+      border: 6px solid #27B0C7B2;
+      width: 35px;
+      height: 35px;
+    }
+    &:after {
+      border: 9px solid #27B0C766;
+      width: 59px;
+      height: 59px;
+    }
+  }
+}
+.about-dates-row {
+  display: flex;
+  &--first {
+    padding-left: 147px;
+    .about-date {
+      padding-bottom: 20px;
+      &__mark {
+        bottom: -8px;
+      }
+    }
+  }
+  &--second {
+    align-items: flex-start;
+    .about-date {
+      padding-top: 130px;
+      min-height: unset;
+
+      &:before {
+        height: calc(100% - 1em);
+      }
+      &__mark {
+        top: -8px;
+      }
+    }
+  }
+}
+
+.about-dates-scrollbar-wrapper {
+  background: #FFFFFF;
+}
+.about-dates-scrollbar-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.about-dates-scrollbar.swiper-scrollbar.swiper-scrollbar-horizontal {
+  position: static;
+  width: 100%;
+  --swiper-scrollbar-size: 8px;
+  --swiper-scrollbar-drag-bg-color: #27B0C7;
+  --swiper-scrollbar-border-radius: 0;
+  --swiper-scrollbar-bg-color: #fff;
+
+  .swiper-scrollbar-drag {
+    border-radius: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-dates-slider {
+    .swiper-slide {
+      padding-top: 40px;
+      padding-bottom: 16px;
+      padding-left: 110px;
+    }
+  }
+
+  .about-date {
+    width: 210px;
+  }
+
+  .about-dates-row--first {
+    padding-left: 105px;
+  }
+}

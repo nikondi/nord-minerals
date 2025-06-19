@@ -23,4 +23,53 @@
             </div>
         </div>
     </section>
+
+    {% set dates = [
+        {year: 2006, text: 'Открытие первого офиса Nord Minerals в Казахстане'},
+        {year: 2009, text: 'Запуск сервисной службы Nord Minerals'},
+        {year: 2013, text: 'Расширение продуктового портфеля для всех этапов производственного цикла'},
+        {year: 2016, text: 'Открытие штаб-квартиры в ЮАР'},
+        {year: 2019, text: 'Выход на рынки Узбекистана и Армении'},
+        {year: 2020, text: 'Запуск службы инжиниринга', marked: true},
+        {year: 2021, text: 'Выход на рынки Кыргызстана и Монголии'},
+        {year: 2021, text: 'Заключение эксклюзивных партнерств с ROITECH и Element Mining and Construction (ELMC) в странах присутствия Nord Minerals'},
+        {year: 2022, text: 'Выход на Индонезийский рынок'},
+        {year: 2022, text: 'Выход на Индонезийский рынок'},
+        {year: 2022, text: 'Выход на Индонезийский рынок'},
+        {year: 2022, text: 'Выход на Индонезийский рынок'},
+        {year: 2022, text: 'Выход на Индонезийский рынок'},
+        {year: 2022, text: 'Выход на Индонезийский рынок'},
+        {year: 2022, text: 'Выход на Индонезийский рынок'},
+        {year: 2022, text: 'Выход на Индонезийский рынок'},
+    ] %}
+    <section class="about-dates slider-wrapper">
+        <div class="container about-dates-container">
+            <div class="swiper about-dates-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="about-dates-row about-dates-row--first">
+                            {% for item in dates %} {# Вверху выводим нечетные #}
+                                {% if loop.index % 2 == 0 %}
+                                    {% include 'components/about/date.html.twig' %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="about-dates-divider"></div>
+                        <div class="about-dates-row about-dates-row--second">
+                            {% for item in dates %} {# Внизу выводим четные #}
+                                {% if loop.index % 2 == 1 %}
+                                    {% include 'components/about/date.html.twig' %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-dates-scrollbar-wrapper">
+            <div class="about-dates-scrollbar-inner">
+                <div class="swiper-scrollbar about-dates-scrollbar"></div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
