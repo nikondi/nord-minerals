@@ -38,6 +38,8 @@ body.ohidden {
 }
 
 .btn {
+  cursor: pointer;
+  background-color: transparent;
   border: 1px solid #FFFFFF;
   //border-image-source: linear-gradient(180deg, #FFFFFF 0%, #65C9DA 100%); // TODO: Разобраться с отображением градиентной границы
   display: inline-flex;

@@ -57,7 +57,7 @@
 
     <section class="clients">
         <div class="container welcome-block-container">
-            <div class="block-heading">Клиенты</div>
+            <h2 class="block-heading">Клиенты</h2>
         </div>
         <div class="container clients-slider-container slider-wrapper">
             <div class="clients-slider-wrapper">
@@ -110,13 +110,44 @@
                 </div>
             </div>
             <div class="container welcome-block-container geography-inner">
-                <div class="block-heading">География</div>
+                <h2 class="block-heading">География</h2>
                 <div class="geography-infographic">
                     <div class="geography-infographic__count">
                         <img src="/assets/img/pages/welcome/geo-count.svg" alt="">{# TODO: В дизайне цифра блюрит фон. Разобраться #}
                     </div>
                     <div class="geography-infographic__text">ОФИСОВ в Центральной, <br />Юго-Восточной Азии<br/>и Африке</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="welcome-news">
+        <div class="container welcome-block-container">
+            <h2 class="block-heading">Новости</h2>
+        </div>
+        <div class="container wn-slider-container">
+            <div class="wn-slider-wrapper">
+                <div class="big-slider-arrow big-slider-arrow--prev"></div>
+                <div class="swiper wn-slider js-hidden-news">
+                    <div class="swiper-wrapper" >
+                        {% for news_item in [
+                            {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/1.jpg', link: '/news/single'},
+                            {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/2.jpg', link: '/news/single'},
+                            {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/1.jpg', link: '/news/single'},
+                            {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/2.jpg', link: '/news/single'},
+                            {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/1.jpg', link: '/news/single'},
+                            {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/2.jpg', link: '/news/single'},
+                            {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/1.jpg', link: '/news/single'},
+                            {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/2.jpg', link: '/news/single'},
+                        ] %}
+                            <div class="swiper-slide">
+                                {% include 'components/news/card.html.twig' %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <a href="/news" class="btn wn-show-more">показать ещё</a>
+                </div>
+                <div class="big-slider-arrow big-slider-arrow--next"></div>
             </div>
         </div>
     </section>

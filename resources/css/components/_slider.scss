@@ -12,6 +12,10 @@
   cursor: pointer;
   position: relative;
 
+  &.swiper-button-lock {
+    display: block;
+  }
+
   &:before {
     content: "";
     background: {
@@ -63,8 +67,12 @@
     }
   }
 
-  &:hover:before {
+  &:not(.swiper-button-disabled):hover:before {
     opacity: 1;
+  }
+
+  &.swiper-button-disabled {
+    cursor: default;
   }
 }
 

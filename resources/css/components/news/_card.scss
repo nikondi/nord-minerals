@@ -1,0 +1,68 @@
+.news-card {
+  display: block;
+  border: 1px solid #FFFFFF;
+  /*border-image-source: linear-gradient(180deg, #FFFFFF 0%, #65C9DA 100%);*/
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #FFFFFF;
+  transition: all .2s;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(62.51deg, #27B0C7 -31.81%, #425666 104.01%);
+    opacity: 0;
+    transition: .3s opacity;
+  }
+
+  &:hover:before {
+    opacity: 1;
+  }
+
+  &__image {
+    height: 150px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__title {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    max-width: 50%;
+  }
+
+  &__caption {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px 20px 20px;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  &__date {
+    padding-bottom: 6px;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    color: #BCCBD6;
+  }
+  &__arrow {
+    color: #65C9DA;
+  }
+}

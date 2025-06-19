@@ -8,6 +8,7 @@ export default function initWelcome() {
   initFirstSlider();
   initClientsSlider();
   initGeography();
+  initNewsSlider();
 }
 
 function initFirstSlider() {
@@ -199,4 +200,50 @@ function initGeography() {
 
   checkMedia();
   media.addEventListener('change', checkMedia);
+}
+
+function initNewsSlider() {
+  const slider = document.querySelector('.wn-slider') as HTMLElement;
+
+  if(!slider)
+    return;
+
+  const container = document.querySelector('.wn-slider-container');
+
+  let swiper = null;
+  const initSlider = () => {
+    swiper = new Swiper(slider, {
+      slidesPerView: 1,
+      modules: [Navigation, Pagination],
+      spaceBetween: 30,
+      navigation: {
+        prevEl: container?.querySelector('.big-slider-arrow--prev') as HTMLElement,
+        nextEl: container?.querySelector('.big-slider-arrow--next') as HTMLElement,
+      },
+      pagination: {
+        enabled: true,
+        el: container.querySelector('.slider-pagination') as HTMLElement,
+        clickable: true,
+      },
+      breakpoints: {
+        1101: {
+          slidesPerView: 2,
+        }
+      }
+    });
+  }
+  const destroySlider = () => swiper?.destroy();
+
+  const media = window.matchMedia("(min-width: 768px)");
+  const checkSlider = () => {
+    if(media.matches) {
+      initSlider();
+    }
+    else {
+      destroySlider();
+    }
+  }
+
+  checkSlider();
+  media.addEventListener('change', checkSlider);
 }

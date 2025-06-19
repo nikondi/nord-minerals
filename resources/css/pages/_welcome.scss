@@ -20,6 +20,7 @@
     text-transform: uppercase;
     color: #ffffff;
   }
+
   &__subtitle {
     font-weight: 400;
     font-size: 25px;
@@ -31,6 +32,7 @@
     max-width: 640px;
   }
 }
+
 .welcome-first-container {
   --container-width: 1040px;
 }
@@ -41,6 +43,7 @@
   position: relative;
   padding-bottom: 24px;
 }
+
 .wf-slider-wrapper {
   display: flex;
   column-gap: 39px;
@@ -81,6 +84,7 @@
     z-index: 1;
     height: 100%;
   }
+
   &__arrow {
     align-self: flex-end;
     color: #65C9DA;
@@ -94,6 +98,7 @@
     text-transform: uppercase;
     color: #ffffff;
   }
+
   &__description {
     font-weight: 300;
     font-size: 15px;
@@ -110,6 +115,7 @@
   z-index: -1;
   bottom: -50px;
   right: 77px;
+
   video {
     height: 600px;
   }
@@ -119,18 +125,22 @@
   .wf-background {
     right: -150px;
     bottom: 0;
+
     video {
       height: 500px;
     }
   }
 }
+
 @media (max-width: 767px) {
   .welcome-first {
     height: auto;
+
     &__title {
       font-size: 24px;
       line-height: 100%;
     }
+
     &__subtitle {
       font-size: 15px;
       line-height: 20px;
@@ -148,6 +158,7 @@
   .wf-slider-wrapper {
     margin: 0 -16px;
     padding: 0 16px;
+
     .big-slider-arrow {
       display: none;
     }
@@ -156,16 +167,20 @@
     padding: 24px 0 16px 0;
     border: 0;
     background: none;
+
     &:hover {
       backdrop-filter: blur(0);
     }
+
     &__arrow {
       display: none;
     }
+
     &__title {
       font-size: 20px;
       line-height: 32px;
     }
+
     &__description {
       font-size: 15px;
       line-height: 20px;
@@ -221,6 +236,7 @@
   &__info {
     margin-top: 29px;
   }
+
   &__text {
     font-weight: 300;
     font-size: 15px;
@@ -228,10 +244,12 @@
     letter-spacing: 0.05em;
     max-width: 490px;
   }
+
   &__link {
     margin-top: 32px;
   }
 }
+
 .welcome-about-container {
   display: flex;
   flex-wrap: wrap;
@@ -243,16 +261,20 @@
   .welcome-about {
     height: 415px;
     padding-top: 24px;
+
     &__background {
       background-position: center;
+
       &:before {
         mix-blend-mode: initial;
         background-color: rgba(0, 0, 0, 0.3);
       }
     }
+
     &__info {
       margin-top: 16px;
     }
+
     &__link {
       margin-top: 16px;
     }
@@ -265,12 +287,15 @@
   padding-top: 36px;
   padding-bottom: 67px;
 }
+
 .clients-slider-container {
   --container-width: 1260px;
   margin-top: 48px;
+
   .slider-arrow {
     color: #27B0C7;
   }
+
   .slider-pagination {
     display: none;
   }
@@ -286,8 +311,10 @@
   display: flex;
   column-gap: 25px;
 }
+
 .client-slide {
   height: auto;
+
   img {
     width: 100%;
     object-fit: contain;
@@ -299,6 +326,7 @@
     filter: grayscale(100%);
     transition: .2s filter;
   }
+
   &:hover img {
     filter: grayscale(0%);
   }
@@ -321,6 +349,7 @@
     .slider-arrow {
       display: none;
     }
+
     .slider-pagination {
       display: block;
     }
@@ -334,6 +363,7 @@
     overflow: visible;
   }
 }
+
 /* CLIENTS */
 
 /* GEOGRAPHY */
@@ -360,10 +390,12 @@
   &.moveable {
     cursor: grab;
   }
+
   &.grabbing {
     cursor: grabbing;
   }
 }
+
 .geography-inner {
   position: relative;
   z-index: 10;
@@ -417,6 +449,7 @@
     padding-bottom: 4px;
     opacity: 0;
     cursor: text;
+
     div {
       transform: translateX(-100%);
       transition: var(--anim-duration, .3s) transform;
@@ -434,6 +467,7 @@
     border-radius: 50%;
     transition: var(--anim-duration, .3s) transform;
   }
+
   &:after {
     content: "";
     width: 20px;
@@ -444,18 +478,24 @@
     top: 0;
     transition: var(--anim-duration, .3s) top;
   }
+
   &:hover {
+    z-index: 1;
+
     &:before {
-      transform: scale3d(1.666667,1.6666667,1);
+      transform: scale3d(1.666667, 1.6666667, 1);
     }
+
     &:after {
       top: -7px;
     }
   }
+
   &:hover &__inner {
     width: 165px;
     transition-delay: 0s, var(--anim-delay, .15s);
     opacity: 1;
+
     div {
       transform: translateX(0);
     }
@@ -466,6 +506,7 @@
   position: relative;
   padding-left: 5px;
   margin-top: 250px;
+
   &__text {
     position: absolute;
     left: 560px;
@@ -487,6 +528,7 @@
         height: 200px;
       }
     }
+
     &__text {
       left: 410px;
       top: 55px;
@@ -499,9 +541,15 @@
     height: 490px;
     padding-bottom: 25px;
     background: none;
+
     .block-heading {
       padding-top: 25px;
     }
+  }
+  .geography-wrapper.grabbing .geography-inner {
+    pointer-events: none;
+    user-select: none;
+
   }
   .geography-background {
     height: 590px;
@@ -509,7 +557,6 @@
     transform: none;
     right: auto;
     object-position: left -645px top -220px;
-
   }
   .geography-dots {
     display: none;
@@ -523,12 +570,15 @@
   .geography-infographic {
     margin-top: 0;
     position: static;
+
     &__count {
       padding: 0;
+
       img {
         height: 140px;
       }
     }
+
     &__text {
       position: static;
       margin-top: 25px;
@@ -537,4 +587,64 @@
     }
   }
 }
+
 /* GEOGRAPHY */
+
+.welcome-news {
+  padding-top: 15px;
+  padding-bottom: 25px;
+
+  .block-heading {
+    color: #FFFFFF;
+  }
+}
+
+.wn-slider-container {
+  --container-width: 1240px;
+  margin-top: 40px;
+}
+
+.wn-slider-wrapper {
+  display: flex;
+  column-gap: 40px;
+}
+
+.wn-slider {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-bottom: 1px;
+
+  .swiper-slide {
+    height: auto;
+  }
+}
+
+.wn-show-more {
+  display: none;
+  margin-top: 16px;
+}
+
+@media (max-width: 767px) {
+  .wn-slider-wrapper {
+    .big-slider-arrow {
+      display: none;
+    }
+  }
+  .wn-slider {
+    overflow: visible;
+
+    .swiper-wrapper {
+      flex-direction: column;
+      row-gap: 16px;
+      height: auto;
+    }
+
+    .swiper-slide:nth-child(n + 4) {
+      display: none;
+    }
+  }
+  .wn-show-more {
+    display: inline-flex;
+  }
+}
