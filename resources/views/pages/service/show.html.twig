@@ -87,4 +87,11 @@
             <button class="directions-show-more btn" type="button">показать ещё</button>
         </div>
     </section>
+
+    {% set gallery = [
+        '/assets/img/sample/gallery.png',
+        '/assets/img/sample/gallery.png',
+        '/assets/img/sample/gallery.png',
+    ] %}
+    {% include 'components/gallery.html.twig' %}
 {% endblock %}
