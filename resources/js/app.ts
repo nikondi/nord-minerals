@@ -1,10 +1,14 @@
-import initHeader from "@/components/header";
-import initWelcome from "@/pages/welcome";
-import initAbout from "@/pages/about";
+import {initDirections, initHeader} from "@/components";
+import {initAbout, initWelcome} from "@/pages";
 
 document.addEventListener('DOMContentLoaded', function() {
+  /* COMPONENTS */
   initHeader();
+  initDirections();
+  /* COMPONENTS */
 
+  /* PAGES */
   initWelcome();
   initAbout();
+  /* PAGES */
 })

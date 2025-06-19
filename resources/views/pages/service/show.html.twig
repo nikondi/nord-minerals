@@ -45,4 +45,46 @@
             </div>
         </div>
     </section>
+
+    {% set directions = [
+        {title: 'Дробление<br />и сортировка', icon: '/assets/img/sample/service/directions/1.svg',
+            text: '<ul><li>Гирационные дробилки</li><li>Конусные дробилки</li><li>Щековые дробилки</li><li>Грохоты</li><li>Дробилки ударного типа с&nbsp;вертикальным <br />и&nbsp;горизонтальным валом</li><li>Питатели</li><li>Гидромолоты</li></ul>'},
+        {title: 'Измельчение <br />и обогащение', icon: '/assets/img/sample/service/directions/2.svg',
+            text: '<ul><li>Мельницы самоизмельчения и&nbsp;мельницы полусамоизмельчения</li><li>Шаровые и галечные мельницы</li><li>Стержневые мельницы</li><li>Вертикальные мельницы</li></ul>'},
+        {title: 'Классификация <br />и сепарация', icon: '/assets/img/sample/service/directions/2.svg',
+            text: '<ul><li>Гидроциклонное оборудование</li><li>Винтовые сепараторы</li><li>Магнитные сепараторы</li><li>Отсадочные машины</li><li>Концентрационные столы</li><li>Центробежные концентраторы</li></ul>'},
+        {title: 'Дробление<br />и сортировка', icon: '/assets/img/sample/service/directions/1.svg',
+            text: '<ul><li>Гирационные дробилки</li><li>Конусные дробилки</li><li>Щековые дробилки</li><li>Грохоты</li><li>Дробилки ударного типа с&nbsp;вертикальным <br />и&nbsp;горизонтальным валом</li><li>Питатели</li><li>Гидромолоты</li></ul>'},
+        {title: 'Измельчение <br />и обогащение', icon: '/assets/img/sample/service/directions/2.svg',
+            text: '<ul><li>Мельницы самоизмельчения и&nbsp;мельницы полусамоизмельчения</li><li>Шаровые и галечные мельницы</li><li>Стержневые мельницы</li><li>Вертикальные мельницы</li></ul>'},
+        {title: 'Классификация <br />и сепарация', icon: '/assets/img/sample/service/directions/2.svg',
+            text: '<ul><li>Гидроциклонное оборудование</li><li>Винтовые сепараторы</li><li>Магнитные сепараторы</li><li>Отсадочные машины</li><li>Концентрационные столы</li><li>Центробежные концентраторы</li></ul>'},
+        {title: 'Дробление<br />и сортировка', icon: '/assets/img/sample/service/directions/1.svg',
+            text: '<ul><li>Гирационные дробилки</li><li>Конусные дробилки</li><li>Щековые дробилки</li><li>Грохоты</li><li>Дробилки ударного типа с&nbsp;вертикальным <br />и&nbsp;горизонтальным валом</li><li>Питатели</li><li>Гидромолоты</li></ul>'},
+        {title: 'Измельчение <br />и обогащение', icon: '/assets/img/sample/service/directions/2.svg',
+            text: '<ul><li>Мельницы самоизмельчения и&nbsp;мельницы полусамоизмельчения</li><li>Шаровые и галечные мельницы</li><li>Стержневые мельницы</li><li>Вертикальные мельницы</li></ul>'},
+        {title: 'Классификация <br />и сепарация', icon: '/assets/img/sample/service/directions/2.svg',
+            text: '<ul><li>Гидроциклонное оборудование</li><li>Винтовые сепараторы</li><li>Магнитные сепараторы</li><li>Отсадочные машины</li><li>Концентрационные столы</li><li>Центробежные концентраторы</li></ul>'},
+        {title: 'Дробление<br />и сортировка', icon: '/assets/img/sample/service/directions/1.svg',
+            text: '<ul><li>Гирационные дробилки</li><li>Конусные дробилки</li><li>Щековые дробилки</li><li>Грохоты</li><li>Дробилки ударного типа с&nbsp;вертикальным <br />и&nbsp;горизонтальным валом</li><li>Питатели</li><li>Гидромолоты</li></ul>'},
+        {title: 'Измельчение <br />и обогащение', icon: '/assets/img/sample/service/directions/2.svg',
+            text: '<ul><li>Мельницы самоизмельчения и&nbsp;мельницы полусамоизмельчения</li><li>Шаровые и галечные мельницы</li><li>Стержневые мельницы</li><li>Вертикальные мельницы</li></ul>'},
+        {title: 'Классификация <br />и сепарация', icon: '/assets/img/sample/service/directions/2.svg',
+            text: '<ul><li>Гидроциклонное оборудование</li><li>Винтовые сепараторы</li><li>Магнитные сепараторы</li><li>Отсадочные машины</li><li>Концентрационные столы</li><li>Центробежные концентраторы</li></ul>'},
+    ] %}
+    <section class="service-directions directions directions-hiding">
+        <div class="container">
+            <h2 class="block-heading">Технологические<br />направления</h2>
+
+            <div class="directions-list-wrapper">
+                <div class="directions-list">
+                    {% for direction in directions %}
+                        {% include 'components/service/direction.html.twig' %}
+                    {% endfor %}
+                </div>
+            </div>
+
+            <button class="directions-show-more btn" type="button">показать ещё</button>
+        </div>
+    </section>
 {% endblock %}
