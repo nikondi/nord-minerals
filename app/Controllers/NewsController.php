@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Attributes\NoBuild;
+
 class NewsController extends Controller
 {
     public function index(): string
@@ -18,6 +20,7 @@ class NewsController extends Controller
         ]);
     }
 
+    #[NoBuild]
     public function more(): string
     {
         $page = intval($_GET['page'] ?? 1);

@@ -7,13 +7,17 @@ use Closure;
 class Router {
     protected function __construct()
     {
-        $uri = rtrim(ltrim(explode('?', $_SERVER['REQUEST_URI'])[0], '/'), '/');
-        $uri = str_replace(['///', '//'], '/', $uri);
+        if(isset($_SERVER['REQUEST_URI'])) {
+            $uri = rtrim(ltrim(explode('?', $_SERVER['REQUEST_URI'])[0], '/'), '/');
+            $uri = str_replace(['///', '//'], '/', $uri);
 
-        $this->uri = $uri;
+            $this->uri = $uri;
+        }
+        else
+            $this->uri = null;
     }
 
-    protected string $uri;
+    protected ?string $uri;
 
     public static ?self $instance = null;
     public static function getInstance(): self {
@@ -39,6 +43,11 @@ class Router {
     public static function get(string $uri, string|array|Closure $handler): void
     {
         static::getInstance()->addRoute($uri, $handler);
+    }
+
+    public static function getRoutes(): array
+    {
+        return static::getInstance()->routes;
     }
 
     public static function handle(): ?string {
