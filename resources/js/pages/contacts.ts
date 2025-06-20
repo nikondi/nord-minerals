@@ -7,7 +7,7 @@ export default function initContacts() {
 
 function initMap() {
   const wrapper = document.querySelector('.cg-wrapper');
-  const popup = wrapper.querySelector('.cg-popup') as HTMLElement;
+  const popup = wrapper?.querySelector('.cg-popup') as HTMLElement;
 
   if (!wrapper)
     return;
@@ -28,12 +28,14 @@ function initMap() {
       dot.classList.remove('hovered')
     });
 
-    dot.addEventListener('click', () => {
-      if(dot.classList.contains('active'))
-        return;
-      dot.classList.add('active');
-      openDotPopup(dot, data);
-    })
+    if(popup) {
+      dot.addEventListener('click', () => {
+        if (dot.classList.contains('active'))
+          return;
+        dot.classList.add('active');
+        openDotPopup(dot, data);
+      });
+    }
   });
 }
 

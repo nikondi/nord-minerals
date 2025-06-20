@@ -119,11 +119,6 @@ function initGeography() {
       }
       if(speed < 1)
         speed = speed * speed / 2;
-
-
-      if(speed > 1) {
-        console.log(speed, window.outerWidth, bounds.right);
-      }
     }
 
     currentTranslate += deltaX * speed;

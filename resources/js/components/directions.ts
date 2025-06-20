@@ -12,7 +12,6 @@ function initHiding() {
       list.style.height = list.getBoundingClientRect().height+'px';
 
       el.classList.add('directions-hiding--all');
-      console.log(list.scrollHeight, list.getBoundingClientRect().height);
       list.style.height = list.scrollHeight+'px';
       list.addEventListener('transitionend', (e) => {
         if(e.target != list)

@@ -2,6 +2,7 @@ import {lockBody, unlockBody} from "@/helpers/popup";
 
 export default function initHeader() {
   initBurger();
+  initSticky();
 }
 
 function initBurger() {
@@ -47,4 +48,28 @@ function initBurger() {
     if(e.key === "Escape")
       closeMenu();
   });
+}
+
+function initSticky() {
+  const header = document.querySelector('.header') as HTMLElement;
+
+  const media = window.matchMedia("(min-width: 768px)");
+
+  const checkSticky = () => {
+    if(header.getBoundingClientRect().top == 0)
+      header.classList.add("sticky");
+    else
+      header.classList.remove("sticky");
+  }
+
+  const checkMedia = () => {
+    if(media.matches)
+      window.addEventListener("scroll", checkSticky);
+    else
+      window.removeEventListener("scroll", checkSticky);
+  }
+
+  checkMedia();
+  media.addEventListener('change', checkMedia);
+
 }

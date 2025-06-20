@@ -5,6 +5,9 @@
   top: 0;
   background: linear-gradient(180deg, #425666 5.66%, rgba(66, 86, 102, 0) 83.79%);
   z-index: 600;
+  &.sticky .nav a.active:not(:hover) {
+    border-color: transparent;
+  }
 }
 
 .top-header {
