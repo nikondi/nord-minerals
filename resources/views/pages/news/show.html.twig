@@ -1,92 +1,52 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <section class="page-heading service-first">
-        <div class="page-heading-wrapper">
-            <div class="page-heading-background">
-                <img src="/assets/img/pages/service/first-background.png" alt="">
+    <section class="page-heading ns-first">
+        <div class="page-heading-wrapper ns-first-wrapper">
+            <div class="ns-first-background">
+                <img src="/assets/img/sample/news/big.png" alt="">
             </div>
             <div class="container page-heading-container">
                 <a href="/services" class="back-link">
-                    Вернуться ко всем услугам
+                    Вернуться ко всем новостям
                 </a>
-                <h1 class="block-heading">Поставка<br/>оборудования</h1>
-                <div class="page-heading__text">
-                    Nord Minerals поставляет оборудование, запчасти и материалы от ведущих мировых производителей,
-                    обеспечивая бесперебойную работу и стабильную производительность.
+                <h1 class="block-heading">Дробилки протестированы. Уверенность обеспечена.</h1>
+                <div class="ns-date">
+                    <time datetime="2025-05-05">5 мая 2025</time>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="service-stages">
-        <div class="service-stage">
-            <img src="/assets/img/big-numbers/1.svg" alt="">
-            <div class="service-stage__text">
-                Подбор оборудования, поставка запасных частей и&nbsp;материалов ведущих мировых производителей
-            </div>
-        </div>
-        <div class="service-stage">
-            <img src="/assets/img/big-numbers/2.svg" alt="">
-            <div class="service-stage__text">
-                Контроль качества изготовления<br/>на&nbsp;всех стадиях производства оборудования
-            </div>
-        </div>
-        <div class="service-stage">
-            <img src="/assets/img/big-numbers/3.svg" alt="">
-            <div class="service-stage__text">
-                Выполнение контрольной сборки
-            </div>
-        </div>
-        <div class="service-stage">
-            <img src="/assets/img/big-numbers/4.svg" alt="">
-            <div class="service-stage__text">
-                Консигнационные склады запасных частей
-            </div>
-        </div>
-    </section>
-
-    {% set directions = [
-        {title: 'Дробление<br />и сортировка', icon: '/assets/img/sample/service/directions/1.svg',
-            text: '<ul><li>Гирационные дробилки</li><li>Конусные дробилки</li><li>Щековые дробилки</li><li>Грохоты</li><li>Дробилки ударного типа с&nbsp;вертикальным <br />и&nbsp;горизонтальным валом</li><li>Питатели</li><li>Гидромолоты</li></ul>'},
-        {title: 'Измельчение <br />и обогащение', icon: '/assets/img/sample/service/directions/2.svg',
-            text: '<ul><li>Мельницы самоизмельчения и&nbsp;мельницы полусамоизмельчения</li><li>Шаровые и галечные мельницы</li><li>Стержневые мельницы</li><li>Вертикальные мельницы</li></ul>'},
-        {title: 'Классификация <br />и сепарация', icon: '/assets/img/sample/service/directions/2.svg',
-            text: '<ul><li>Гидроциклонное оборудование</li><li>Винтовые сепараторы</li><li>Магнитные сепараторы</li><li>Отсадочные машины</li><li>Концентрационные столы</li><li>Центробежные концентраторы</li></ul>'},
-        {title: 'Дробление<br />и сортировка', icon: '/assets/img/sample/service/directions/1.svg',
-            text: '<ul><li>Гирационные дробилки</li><li>Конусные дробилки</li><li>Щековые дробилки</li><li>Грохоты</li><li>Дробилки ударного типа с&nbsp;вертикальным <br />и&nbsp;горизонтальным валом</li><li>Питатели</li><li>Гидромолоты</li></ul>'},
-        {title: 'Измельчение <br />и обогащение', icon: '/assets/img/sample/service/directions/2.svg',
-            text: '<ul><li>Мельницы самоизмельчения и&nbsp;мельницы полусамоизмельчения</li><li>Шаровые и галечные мельницы</li><li>Стержневые мельницы</li><li>Вертикальные мельницы</li></ul>'},
-        {title: 'Классификация <br />и сепарация', icon: '/assets/img/sample/service/directions/2.svg',
-            text: '<ul><li>Гидроциклонное оборудование</li><li>Винтовые сепараторы</li><li>Магнитные сепараторы</li><li>Отсадочные машины</li><li>Концентрационные столы</li><li>Центробежные концентраторы</li></ul>'},
-        {title: 'Дробление<br />и сортировка', icon: '/assets/img/sample/service/directions/1.svg',
-            text: '<ul><li>Гирационные дробилки</li><li>Конусные дробилки</li><li>Щековые дробилки</li><li>Грохоты</li><li>Дробилки ударного типа с&nbsp;вертикальным <br />и&nbsp;горизонтальным валом</li><li>Питатели</li><li>Гидромолоты</li></ul>'},
-        {title: 'Измельчение <br />и обогащение', icon: '/assets/img/sample/service/directions/2.svg',
-            text: '<ul><li>Мельницы самоизмельчения и&nbsp;мельницы полусамоизмельчения</li><li>Шаровые и галечные мельницы</li><li>Стержневые мельницы</li><li>Вертикальные мельницы</li></ul>'},
-        {title: 'Классификация <br />и сепарация', icon: '/assets/img/sample/service/directions/2.svg',
-            text: '<ul><li>Гидроциклонное оборудование</li><li>Винтовые сепараторы</li><li>Магнитные сепараторы</li><li>Отсадочные машины</li><li>Концентрационные столы</li><li>Центробежные концентраторы</li></ul>'},
-        {title: 'Дробление<br />и сортировка', icon: '/assets/img/sample/service/directions/1.svg',
-            text: '<ul><li>Гирационные дробилки</li><li>Конусные дробилки</li><li>Щековые дробилки</li><li>Грохоты</li><li>Дробилки ударного типа с&nbsp;вертикальным <br />и&nbsp;горизонтальным валом</li><li>Питатели</li><li>Гидромолоты</li></ul>'},
-        {title: 'Измельчение <br />и обогащение', icon: '/assets/img/sample/service/directions/2.svg',
-            text: '<ul><li>Мельницы самоизмельчения и&nbsp;мельницы полусамоизмельчения</li><li>Шаровые и галечные мельницы</li><li>Стержневые мельницы</li><li>Вертикальные мельницы</li></ul>'},
-        {title: 'Классификация <br />и сепарация', icon: '/assets/img/sample/service/directions/2.svg',
-            text: '<ul><li>Гидроциклонное оборудование</li><li>Винтовые сепараторы</li><li>Магнитные сепараторы</li><li>Отсадочные машины</li><li>Концентрационные столы</li><li>Центробежные концентраторы</li></ul>'},
-    ] %}
-    <section class="service-directions directions directions-hiding">
+    <section class="ns-content">
         <div class="container">
-            <h2 class="block-heading">Технологические<br />направления</h2>
-
-            <div class="directions-list-wrapper">
-                <div class="directions-list">
-                    {% for direction in directions %}
-                        {% include 'components/service/direction.html.twig' %}
-                    {% endfor %}
-                </div>
-            </div>
-
-            <button class="directions-show-more btn" type="button">показать ещё</button>
+            <p>
+                ELMC производит высококачественные детали, полностью совместимые с проверенным на мировом уровне
+                оборудованием таких брендов как Warman и Metso. Эти компоненты проходят строгий контроль качества и
+                постоянно доказывают свою надежность, долговечность и экономическую эффективность — даже в самых тяжелых
+                условиях эксплуатации.<br/>
+                Будучи эксклюзивным дистрибьютором ELMC в Индонезии, Nord Minerals обеспечивает быстрый доступ к
+                запчастям и
+                тесную техническую поддержку, помогая клиентам сократить время простоя и затраты на техническое
+                обслуживание.
+            </p>
+            <p>
+                Для обеспечения еще более быстрого и эффективного обслуживания мы создали местные склады запасных частей
+                по всей Индонезии, гарантируя оперативную доставку непосредственно на горнодобывающие объекты.<br/>
+                Мы также заключаем долгосрочные договоры комиссии с крупными горнодобывающими компаниями для покрытия их
+                годовых потребностей в запасных частях, обеспечивая бесперебойную и надежную работу их предприятий в
+                течение
+                всего года.
+            </p>
+            <p>
+                Вот что представляет собой реальное партнерство: локальное присутствие, надежные цепочки поставок и
+                техническая экспертиза, которая имеет значение.
+                Nord Minerals поставляет оборудование, запчасти и материалы от ведущих мировых производителей,
+                обеспечивая
+                бесперебойную работу и стабильную производительность.
+            </p>
         </div>
     </section>
+
 
     {% set gallery = [
         '/assets/img/sample/gallery.png',
@@ -94,4 +54,25 @@
         '/assets/img/sample/gallery.png',
     ] %}
     {% include 'components/gallery.html.twig' %}
+
+    {% set news = [
+        {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/1.jpg', link: '/news/single'},
+        {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/1.jpg', link: '/news/single'},
+        {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/2.jpg', link: '/news/single'},
+    ] %}
+
+    <section class="ns-read-more">
+        <div class="container">
+            <div class="block-heading">Читайте также</div>
+            <div class="news-list">
+                {% for news_item in news %}
+                    {% include "components/news/card.html.twig" %}
+                {% endfor %}
+            </div>
+
+            <div class="ns-read-more__btn">
+                <a href="/news" class="btn">показать все новости</a>
+            </div>
+        </div>
+    </section>
 {% endblock %}
