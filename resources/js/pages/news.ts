@@ -51,6 +51,9 @@ function initList() {
         if(!data.has_more)
           button.remove();
       })
-      .catch(() => onFinally());
+      .catch(() => {
+        onFinally();
+        page--;
+      });
   });
 }
