@@ -1,9 +1,0 @@
-{
-  "compilerOptions": {
-    "target": "ES5",
-    "paths": {
-      "@/*": ["./resources/js/*"]
-    },
-    "types": ["vite/client"]
-  }
-}
