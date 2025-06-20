@@ -7,7 +7,7 @@ use Closure;
 class Router {
     protected function __construct()
     {
-        $uri = rtrim(ltrim($_SERVER['REQUEST_URI'], '/'), '/');
+        $uri = rtrim(ltrim(explode('?', $_SERVER['REQUEST_URI'])[0], '/'), '/');
         $uri = str_replace(['///', '//'], '/', $uri);
 
         $this->uri = $uri;

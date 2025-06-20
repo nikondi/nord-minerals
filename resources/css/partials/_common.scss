@@ -63,7 +63,7 @@ body.ohidden {
 
   transition: {
     duration: .3s;
-    property: backdrop-filter, background-position, color;
+    property: backdrop-filter, background-position, color, opacity;
   };
 
   background: {
@@ -72,10 +72,14 @@ body.ohidden {
     position: 100% 0;
   };
 
-  &:hover {
+  &:not(:disabled):hover {
     background-position: 0 0;
     color: #FFFFFF;
     backdrop-filter: blur(16px);
+  }
+  &:disabled {
+    opacity: 0.8;
+    cursor: default;
   }
 }
 

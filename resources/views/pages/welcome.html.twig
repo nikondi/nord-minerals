@@ -121,6 +121,16 @@
         </div>
     </section>
 
+    {% set news = [
+        {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/1.jpg', link: '/news/single'},
+        {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/2.jpg', link: '/news/single'},
+        {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/1.jpg', link: '/news/single'},
+        {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/2.jpg', link: '/news/single'},
+        {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/1.jpg', link: '/news/single'},
+        {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/2.jpg', link: '/news/single'},
+        {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/1.jpg', link: '/news/single'},
+        {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/2.jpg', link: '/news/single'},
+    ] %}
     <section class="welcome-news">
         <div class="container welcome-block-container">
             <h2 class="block-heading">Новости</h2>
@@ -130,16 +140,7 @@
                 <div class="big-slider-arrow big-slider-arrow--prev"></div>
                 <div class="swiper wn-slider js-hidden-news">
                     <div class="swiper-wrapper" >
-                        {% for news_item in [
-                            {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/1.jpg', link: '/news/single'},
-                            {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/2.jpg', link: '/news/single'},
-                            {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/1.jpg', link: '/news/single'},
-                            {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/2.jpg', link: '/news/single'},
-                            {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/1.jpg', link: '/news/single'},
-                            {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/2.jpg', link: '/news/single'},
-                            {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/1.jpg', link: '/news/single'},
-                            {title: 'Заголовок новости', date: '12 февраля 2025', thumbnail: '/assets/img/sample/news/2.jpg', link: '/news/single'},
-                        ] %}
+                        {% for news_item in news %}
                             <div class="swiper-slide">
                                 {% include 'components/news/card.html.twig' %}
                             </div>

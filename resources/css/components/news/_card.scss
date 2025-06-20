@@ -6,7 +6,6 @@
   overflow: hidden;
   text-decoration: none;
   color: #FFFFFF;
-  transition: all .2s;
   position: relative;
 
   &:before {
@@ -65,4 +64,9 @@
   &__arrow {
     color: #65C9DA;
   }
+}
+
+.news-card-skeleton {
+  height: 280px;
+  border-radius: 8px;
 }

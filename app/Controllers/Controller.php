@@ -33,4 +33,10 @@ class Controller {
         }
         return null;
     }
+
+    protected function json(array|string $data): string
+    {
+        header('Content-type: application/json');
+        return json_encode($data);
+    }
 }
