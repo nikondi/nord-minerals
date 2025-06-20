@@ -9,8 +9,8 @@ function initList() {
   const list = wrapper?.querySelector('.news-list') as HTMLElement;
   const button = wrapper?.querySelector('.news-show-more') as HTMLButtonElement;
 
-  const endpoint = wrapper.dataset.endpoint;
-  const per_page = parseInt(wrapper.dataset.per_page);
+  const endpoint = wrapper?.dataset.endpoint;
+  const per_page = parseInt(wrapper?.dataset.per_page);
 
   if(!wrapper || !list)
     return;

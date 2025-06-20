@@ -1,0 +1,65 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    {% set dots = [
+        {title: 'Йоханнесбург, ЮАР', description: 'Штаб-квартира управляющей компании NDML',
+            address: 'Dostyk Ave 192/2, Almaty, 050051, Kazakhstan',
+            phone: '+27 10 500 5717', email: 'info@ndminerals.com',
+            top: 103, left: 500},
+        {title: 'Алматы, Республика Казахстан', description: 'Головной офис в регионе Евразия',
+            phone: '+7 721 294 03 77', email: 'info@ndminerals.com',
+            top: 89, left: 800 },
+        {title: 'Джакарта, Индонезия', description: 'Головной офис в регионе Юго-Восточная Азия',
+            email: 'info@ndminerals.com',
+            address: 'Dostyk Ave 192/2, Almaty, 050051, Kazakhstan',
+            top: 608, left: 400},
+    ] %}
+
+    <section class="contacts-list-wrapper">
+        <div class="container">
+            <ul class="contacts-list">
+                {% for dot in dots %}
+                    <li class="contact">
+                        <div class="contact__title">{{ dot.title }}</div>
+                        <div class="contact__description">{{ dot.description }}</div>
+                        <div class="contact__bottom">
+                            {% if dot.phone %}<a href="tel:{{ dot.phone }}" class="contact__contact">{{ dot.phone }}</a>{% endif %}
+                            {% if dot.email %}<a href="mailto:{{ dot.email }}" class="contact__contact">{{ dot.email }}</a>{% endif %}
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+
+    <section class="contacts-geography">
+        <div class="cg-wrapper">
+            <img src="/assets/img/geography-cut.png" alt="" class="cg-map">
+            <div class="cg-dots">
+                {% for dot in dots %}
+                    <div class="cg-dot" style="top: {{ dot.top }}px; left: {{ dot.left }}px" data-dot="{{ dot | json_encode }}">
+                        <div class="cg-dot__marker"></div>
+                        <div class="cg-dot__text">
+                            <div class="cg-dot__title">{{ dot.title }}</div>
+                            <div class="cg-dot__description">{{ dot.description }}</div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="cg-popup">
+                <div class="cg-popup-background"></div>
+                <div class="cg-popup-content">
+                    <button class="cg-popup-close">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.1219 31.1164L0.000581145 28.9951L28.992 0.00367951L31.1133 2.125L2.1219 31.1164Z" fill="currentColor"/>
+                            <path d="M0.000812411 2.1219L2.12213 0.000581145L31.1135 28.992L28.9922 31.1133L0.000812411 2.1219Z" fill="currentColor"/>
+                        </svg>
+                    </button>
+
+                    <div class="cg-popup-dot">{# Формируется js#}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

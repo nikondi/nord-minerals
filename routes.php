@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\AboutController;
+use App\Controllers\ContactsController;
 use App\Controllers\NewsController;
 use App\Controllers\ServiceController;
 use App\Controllers\WelcomeController;
@@ -9,6 +10,8 @@ use App\Router;
 Router::get('/', WelcomeController::class);
 
 Router::get('/about', AboutController::class);
+
+Router::get('/contacts', ContactsController::class);
 
 Router::get('/services/', [ServiceController::class, 'index']);
 Router::get('/services/single', [ServiceController::class, 'show']);

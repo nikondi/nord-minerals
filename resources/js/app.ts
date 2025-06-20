@@ -1,5 +1,5 @@
 import {initDirections, initGallery, initHeader} from "@/components";
-import {initAbout, initNews, initWelcome} from "@/pages";
+import {initAbout, initContacts, initNews, initWelcome} from "@/pages";
 
 document.addEventListener('DOMContentLoaded', function() {
   /* COMPONENTS */
@@ -12,5 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
   initWelcome();
   initAbout();
   initNews();
+  initContacts();
   /* PAGES */
 })
