@@ -39,34 +39,31 @@
         {year: 2021, text: 'Выход на рынки Кыргызстана и Монголии'},
         {year: 2021, text: 'Заключение эксклюзивных партнерств с ROITECH и Element Mining and Construction (ELMC) в странах присутствия Nord Minerals'},
         {year: 2022, text: 'Выход на Индонезийский рынок'},
-        {year: 2022, text: 'Выход на Индонезийский рынок'},
-        {year: 2022, text: 'Выход на Индонезийский рынок'},
-        {year: 2022, text: 'Выход на Индонезийский рынок'},
-        {year: 2022, text: 'Выход на Индонезийский рынок'},
-        {year: 2022, text: 'Выход на Индонезийский рынок'},
-        {year: 2022, text: 'Выход на Индонезийский рынок'},
-        {year: 2022, text: 'Выход на Индонезийский рынок'},
-        {year: 2022, text: 'Выход на Индонезийский рынок'},
+        {year: 2023, text: 'Успешное прохождение процедуры комплаенс и начало сотрудничества с компанией FLSmidth'},
+        {year: 2024, text: 'Открытие региональных складов запасных частей ELMC в Индонезии и Алматы'},
+        {year: 2025, text: 'Обновление фирменного стиля компании'},
     ] %}
     <section class="about-history slider-wrapper">
-        <div class="container">
-            <div class="swiper about-history-slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="about-history-row about-history-row--first">
-                            {% for item in dates %} {# Вверху выводим нечетные #}
-                                {% if loop.index % 2 == 0 %}
-                                    {% include 'components/about/date.html.twig' %}
-                                {% endif %}
-                            {% endfor %}
-                        </div>
-                        <div class="about-history-divider"></div>
-                        <div class="about-history-row about-history-row--second">
-                            {% for item in dates %} {# Внизу выводим четные #}
-                                {% if loop.index % 2 == 1 %}
-                                    {% include 'components/about/date.html.twig' %}
-                                {% endif %}
-                            {% endfor %}
+        <div class="wrapper-section about-history-wrapper">
+            <div class="container">
+                <div class="swiper about-history-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="about-history-row about-history-row--first">
+                                {% for item in dates %} {# Вверху выводим нечетные #}
+                                    {% if loop.index % 2 == 0 %}
+                                        {% include 'components/about/date.html.twig' %}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <div class="about-history-divider"></div>
+                            <div class="about-history-row about-history-row--second">
+                                {% for item in dates %} {# Внизу выводим четные #}
+                                    {% if loop.index % 2 == 1 %}
+                                        {% include 'components/about/date.html.twig' %}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>

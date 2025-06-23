@@ -73,10 +73,6 @@
   color: #fff;
 }
 
-.about-history-wrapper {
-  max-width: 1440px;
-  margin: 0 auto;
-}
 .about-history-divider {
   height: 1px;
   background-color: #FFFFFF;
@@ -220,8 +216,32 @@
     width: 210px;
   }
 
-  .about-dates-row--first {
+  .about-history-row--first {
     padding-left: 105px;
+  }
+}
+
+@media (min-width: 1441px) {
+  .about-history-wrapper {
+    overflow: hidden;
+    background: inherit;
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: -20%;
+      height: 140%;
+      width: 50px;
+      filter: blur(10px);
+      background: inherit;
+      z-index: 10;
+    }
+    &:before {
+      left: -25px;
+    }
+    &:after {
+      right: -25px;
+    }
   }
 }
 
