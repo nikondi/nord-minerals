@@ -135,6 +135,32 @@
     left: -8px;
     border-radius: 50%;
     background-color: #27B0C7;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      border-radius: 50%;
+      opacity: 0;
+      transition: {
+        duration: .3s;
+        property: transform, opacity;
+      };
+    }
+
+    &:before {
+      border: 6px solid #27B0C7B2;
+      width: 35px;
+      height: 35px;
+    }
+    &:after {
+      border: 9px solid #27B0C766;
+      width: 59px;
+      height: 59px;
+    }
   }
 
   &:before {
@@ -148,22 +174,8 @@
 
   &--marked &__mark {
     &:before, &:after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-    }
-    &:before {
-      border: 6px solid #27B0C7B2;
-      width: 35px;
-      height: 35px;
-    }
-    &:after {
-      border: 9px solid #27B0C766;
-      width: 59px;
-      height: 59px;
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
     }
   }
 }
@@ -194,25 +206,6 @@
   }
 }
 
-/*.about-dates-scrollbar-wrapper {
-  background: #FFFFFF;
-}
-.about-dates-scrollbar-inner {
-  max-width: 1440px;
-  margin: 0 auto;
-}
-.about-dates-scrollbar.swiper-scrollbar.swiper-scrollbar-horizontal {
-  position: static;
-  width: 100%;
-  --swiper-scrollbar-size: 8px;
-  --swiper-scrollbar-drag-bg-color: #27B0C7;
-  --swiper-scrollbar-border-radius: 0;
-  --swiper-scrollbar-bg-color: #fff;
-
-  .swiper-scrollbar-drag {
-    border-radius: 24px;
-  }
-}*/
 
 @media (max-width: 767px) {
   .about-history-slider {

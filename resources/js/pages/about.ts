@@ -17,7 +17,21 @@ function initHistory() {
   const progressbar = wrapper.querySelector(".about-history-progressbar") as HTMLElement;
 
 
-  const handleTranslate = (translate: number) => {
+  const firstRowDates = wrapper.querySelectorAll(".about-history-row--first .about-date");
+  const secondRowDates = wrapper.querySelectorAll(".about-history-row--second .about-date");
+
+  const totalDates = firstRowDates.length + secondRowDates.length;
+
+  const dates: HTMLElement[] = [];
+  for(let i = 0; i <= Math.max(firstRowDates.length, secondRowDates.length); i++) {
+    if(secondRowDates[i])
+      dates.push(secondRowDates[i] as HTMLElement);
+    if(firstRowDates[i])
+      dates.push(firstRowDates[i] as HTMLElement);
+  }
+
+
+  const handleTranslate = (swiper: Swiper, translate: number) => {
     let progress = translate / (swiper.maxTranslate() - swiper.minTranslate()) * 100;
     if(progress < 0)
       progress = 0;
@@ -25,12 +39,24 @@ function initHistory() {
       progress = 100;
 
     progressbar.style.width = progress+'%';
+
+    dates.forEach((date, i) => {
+      if(progress >= (i / totalDates) * 100 && progress <= ((i + 1) / totalDates) * 100)
+        date.classList.add('about-date--marked');
+      else
+        date.classList.remove('about-date--marked');
+    })
   }
 
   const swiper = new Swiper(slider, {
     slidesPerView: 'auto',
     modules: [FreeMode, Pagination],
-    freeMode: true
+    freeMode: true,
+    on: {
+      init: (instance) => {
+        handleTranslate(instance, instance.translate);
+      }
+    }
   });
 
   if(window.requestAnimationFrame) {
@@ -38,7 +64,7 @@ function initHistory() {
     let animRef = null;
 
     const handleFrame = () => {
-      handleTranslate(swiperWrapper.getBoundingClientRect().x - swiper.el.getBoundingClientRect().x);
+      handleTranslate(swiper, swiperWrapper.getBoundingClientRect().x - swiper.el.getBoundingClientRect().x);
       if(moving) {
         requestAnimationFrame(handleFrame);
       }
@@ -62,7 +88,7 @@ function initHistory() {
       if(animRef)
         moving = false;
 
-      handleTranslate(swiper.translate);
+      handleTranslate(swiper, swiper.translate);
     });
   }
 
