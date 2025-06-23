@@ -7,6 +7,7 @@ class ContactsController extends Controller {
     {
         return $this->render("pages/contacts", [
             'title' => 'Контакты',
+            'activeMenuItem' => 'contacts',
         ]);
     }
 }

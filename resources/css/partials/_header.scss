@@ -6,7 +6,7 @@
   background: linear-gradient(180deg, #425666 5.66%, rgba(66, 86, 102, 0) 83.79%);
   z-index: 600;
   &.sticky .nav a.active:not(:hover) {
-    border-color: transparent;
+    border-color: rgba(0, 0, 0, 0);
   }
 }
 
@@ -47,7 +47,7 @@
       text-decoration: none;
       letter-spacing: 0.05em;
 
-      border-bottom: 6px solid transparent;
+      border-bottom: 6px solid rgba(vars.$color-blue, 0);
 
       transition: .3s border-color;
 

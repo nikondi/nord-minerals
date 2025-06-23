@@ -7,6 +7,7 @@ class ServiceController extends Controller {
     {
         return $this->render("pages/service/index", [
             'title' => 'Услуги',
+            'activeMenuItem' => 'services',
         ]);
     }
 
@@ -14,6 +15,7 @@ class ServiceController extends Controller {
     {
         return $this->render("pages/service/show", [
             'title' => 'Поставка оборудования',
+            'activeMenuItem' => 'services',
         ]);
     }
 }

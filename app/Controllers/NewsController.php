@@ -10,6 +10,7 @@ class NewsController extends Controller
     {
         return $this->render("pages/news/index", [
             'title' => 'Новости',
+            'activeMenuItem' => 'news',
         ]);
     }
 
@@ -17,6 +18,7 @@ class NewsController extends Controller
     {
         return $this->render("pages/news/show", [
             'title' => 'Дробилки протестированы. Уверенность обеспечена.',
+            'activeMenuItem' => 'news',
         ]);
     }
 

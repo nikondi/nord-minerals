@@ -7,6 +7,7 @@ class AboutController extends Controller {
     {
         return $this->render("pages/about", [
             'title' => 'О нас',
+            'activeMenuItem' => 'about',
         ]);
     }
 }
