@@ -64,13 +64,13 @@
 }
 
 @font-face {
-    font-family: 'Akzidenz-Grotesk Pro Light Ext';
-    src: url('AkzidenzGroteskPro-LightEx.eot');
-    src: local('Akzidenz-Grotesk Pro Light Ext'), local('AkzidenzGroteskPro-LightEx'),
-        url('AkzidenzGroteskPro-LightEx.eot?#iefix') format('embedded-opentype'),
-        url('AkzidenzGroteskPro-LightEx.woff2') format('woff2'),
-        url('AkzidenzGroteskPro-LightEx.woff') format('woff'),
-        url('AkzidenzGroteskPro-LightEx.ttf') format('truetype');
+    font-family: 'Akzidenz-Grotesk Pro Ext';
+    src: url('AkzidenzGroteskPro-Light.eot');
+    src: local('Akzidenz-Grotesk Pro Light Ext'), local('AkzidenzGroteskPro-Light'),
+        url('AkzidenzGroteskPro-Light.eot?#iefix') format('embedded-opentype'),
+        url('AkzidenzGroteskPro-Light.woff2') format('woff2'),
+        url('AkzidenzGroteskPro-Light.woff') format('woff'),
+        url('AkzidenzGroteskPro-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
