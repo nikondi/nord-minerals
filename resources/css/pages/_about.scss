@@ -68,21 +68,21 @@
 }
 
 
-.about-dates {
+.about-history {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), #425666;
   color: #fff;
 }
 
-.about-dates-wrapper {
+.about-history-wrapper {
   max-width: 1440px;
   margin: 0 auto;
 }
-.about-dates-divider {
+.about-history-divider {
   height: 1px;
   background-color: #FFFFFF;
 }
 
-.about-dates-slider {
+.about-history-slider {
   overflow: visible;
   .swiper-slide {
     padding-top: 64px;
@@ -90,6 +90,21 @@
     padding-left: 16px;
     width: auto;
   }
+}
+
+.about-history-progress {
+  height: 8px;
+  background-color: #E0E0E0;
+  .wrapper-section {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+.about-history-progressbar {
+  height: 100%;
+  border-radius: 0 24px 24px 0;
+  background-color: #27B0C7;
+  width: 0;
 }
 
 .about-date {
@@ -152,7 +167,7 @@
     }
   }
 }
-.about-dates-row {
+.about-history-row {
   display: flex;
   &--first {
     padding-left: 147px;
@@ -179,7 +194,7 @@
   }
 }
 
-.about-dates-scrollbar-wrapper {
+/*.about-dates-scrollbar-wrapper {
   background: #FFFFFF;
 }
 .about-dates-scrollbar-inner {
@@ -197,10 +212,10 @@
   .swiper-scrollbar-drag {
     border-radius: 24px;
   }
-}
+}*/
 
 @media (max-width: 767px) {
-  .about-dates-slider {
+  .about-history-slider {
     .swiper-slide {
       padding-top: 40px;
       padding-bottom: 16px;

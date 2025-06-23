@@ -47,20 +47,20 @@
         {year: 2022, text: 'Выход на Индонезийский рынок'},
         {year: 2022, text: 'Выход на Индонезийский рынок'},
     ] %}
-    <section class="about-dates slider-wrapper">
-        <div class="container about-dates-container">
-            <div class="swiper about-dates-slider">
+    <section class="about-history slider-wrapper">
+        <div class="container">
+            <div class="swiper about-history-slider">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="about-dates-row about-dates-row--first">
+                        <div class="about-history-row about-history-row--first">
                             {% for item in dates %} {# Вверху выводим нечетные #}
                                 {% if loop.index % 2 == 0 %}
                                     {% include 'components/about/date.html.twig' %}
                                 {% endif %}
                             {% endfor %}
                         </div>
-                        <div class="about-dates-divider"></div>
-                        <div class="about-dates-row about-dates-row--second">
+                        <div class="about-history-divider"></div>
+                        <div class="about-history-row about-history-row--second">
                             {% for item in dates %} {# Внизу выводим четные #}
                                 {% if loop.index % 2 == 1 %}
                                     {% include 'components/about/date.html.twig' %}
@@ -69,6 +69,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="about-history-progress">
+            <div class="wrapper-section">
+                <div class="about-history-progressbar"></div>
             </div>
         </div>
         <div class="about-dates-scrollbar-wrapper">
