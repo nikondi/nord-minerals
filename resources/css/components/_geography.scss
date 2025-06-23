@@ -1,0 +1,218 @@
+.geography {
+  height: 794px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(180deg, #425666 65.99%, #4F677A 100%);
+
+  .block-heading {
+    padding-top: 48px;
+  }
+}
+
+.geography-wrapper {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
+
+  &.moveable {
+    cursor: grab;
+  }
+
+  &.grabbing {
+    cursor: grabbing;
+  }
+}
+
+.geography-inner {
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.geography-background {
+  height: 1152px;
+  mix-blend-mode: multiply;
+  max-width: unset;
+  position: absolute;
+  top: -360px;
+  right: 0;
+  transform: translateX(210px);
+  pointer-events: none;
+}
+
+.geography-map {
+  width: 1440px;
+  position: absolute;
+  transition: .1s left ease-out;
+  will-change: left;
+}
+
+.geography-dots {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1440px;
+  height: 100%;
+  z-index: 20;
+}
+
+.geography-dot {
+  position: absolute;
+  padding-left: 30px;
+  padding-top: 10px;
+  color: #FFFFFF;
+  --anim-duration: .4s;
+  --anim-delay: .1s;
+  cursor: default;
+
+  &__inner {
+    width: 0;
+    overflow: hidden;
+    transition: {
+      duration: 0s, var(--anim-duration, .3s);
+      property: width, opacity;
+      delay: var(--anim-duration, .3s), var(--anim-delay, .15s);
+    };
+    padding-bottom: 4px;
+    opacity: 0;
+    cursor: text;
+
+    div {
+      transform: translateX(-100%);
+      transition: var(--anim-duration, .3s) transform;
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 13px;
+    background-color: #65C9DA;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transition: var(--anim-duration, .3s) transform;
+  }
+
+  &:after {
+    content: "";
+    width: 20px;
+    height: 10px;
+    background-image: url("/assets/img/map-triangle.svg");
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: var(--anim-duration, .3s) top;
+  }
+
+  &:hover {
+    z-index: 1;
+
+    &:before {
+      transform: scale3d(1.666667, 1.6666667, 1);
+    }
+
+    &:after {
+      top: -7px;
+    }
+  }
+
+  &:hover &__inner {
+    width: 165px;
+    transition-delay: 0s, var(--anim-delay, .15s);
+    opacity: 1;
+
+    div {
+      transform: translateX(0);
+    }
+  }
+}
+
+.geography-infographic {
+  position: relative;
+  padding-left: 5px;
+  margin-top: 250px;
+
+  &__text {
+    position: absolute;
+    left: 560px;
+    top: 85px;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+}
+
+@media (max-width: 920px) {
+  .geography-infographic {
+    &__count {
+      img {
+        height: 200px;
+      }
+    }
+
+    &__text {
+      left: 410px;
+      top: 55px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .geography {
+    height: 490px;
+    padding-bottom: 25px;
+    background: none;
+
+    .block-heading {
+      padding-top: 25px;
+    }
+  }
+  .geography-wrapper.grabbing .geography-inner {
+    pointer-events: none;
+    user-select: none;
+
+  }
+  .geography-background {
+    height: 590px;
+    top: 0;
+    transform: none;
+    right: auto;
+    object-position: left -645px top -220px;
+  }
+  .geography-dots {
+    display: none;
+  }
+  .geography-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .geography-infographic {
+    margin-top: 0;
+    position: static;
+
+    &__count {
+      padding: 0;
+
+      img {
+        height: 140px;
+      }
+    }
+
+    &__text {
+      position: static;
+      margin-top: 25px;
+      font-size: 16px;
+      line-height: 28px;
+    }
+  }
+}
