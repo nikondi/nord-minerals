@@ -42,6 +42,10 @@
   }
 }
 
+.ns-first-wrapper {
+  max-width: unset;
+}
+
 
 .ns-date {
   display: flex;
@@ -80,6 +84,7 @@
 
 
 .ns-content {
+  font-family: 'Akzidenz-Grotesk Pro', sans-serif;
   background-color: #BCCBD6;
   --container-width: 840px;
   padding-top: 56px;
