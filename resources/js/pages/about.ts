@@ -1,6 +1,6 @@
 import "swiper/css/bundle";
 import Swiper from "swiper";
-import {FreeMode, Pagination, Scrollbar} from "swiper/modules";
+import {FreeMode, Mousewheel, Pagination, Scrollbar} from "swiper/modules";
 
 export default function aboutPage() {
   initHistory();
@@ -50,7 +50,12 @@ function initHistory() {
 
   const swiper = new Swiper(slider, {
     slidesPerView: 'auto',
-    modules: [FreeMode, Pagination],
+    modules: [FreeMode, Pagination, Mousewheel],
+    mousewheel: {
+      enabled: true,
+      releaseOnEdges: true,
+
+    },
     freeMode: true,
     on: {
       init: (instance) => {
@@ -59,10 +64,10 @@ function initHistory() {
     }
   });
 
-  if(window.requestAnimationFrame) {
-    let moving = false;
-    let animRef = null;
+  let moving = false;
+  let animRef = null;
 
+  if(window.requestAnimationFrame) {
     const handleFrame = () => {
       handleTranslate(swiper, swiperWrapper.getBoundingClientRect().x - swiper.el.getBoundingClientRect().x);
       if(moving) {
@@ -84,13 +89,20 @@ function initHistory() {
 
     swiper.on('transitionStart', onTransitionStart);
     swiper.on('transitionEnd', onTransitionEnd);
-    swiper.on('sliderMove', () => {
-      if(animRef)
-        moving = false;
-
-      handleTranslate(swiper, swiper.translate);
-    });
   }
+
+  swiper.on('sliderMove', () => {
+    if(animRef)
+      moving = false;
+
+    handleTranslate(swiper, swiper.translate);
+  });
+  swiper.on('setTranslate', () => {
+    if(animRef)
+      moving = false;
+
+    handleTranslate(swiper, swiper.translate);
+  });
 
 
 }
