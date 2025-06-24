@@ -8,7 +8,7 @@
 }
 
 .services-list {
-  max-width: 1440px;
+  //max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -57,7 +57,7 @@
     transform: translateY(50%);
     color: #65C9DA;
     opacity: 0;
-    transition: opacity .3s;
+    transition: opacity .5s;
   }
 
   &:hover .service-item-background:after,
@@ -96,7 +96,7 @@
     height: 100%;
     background: linear-gradient(62.51deg, #27B0C7 -31.81%, #425666 104.01%);
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity .5s;
   }
 }
 
