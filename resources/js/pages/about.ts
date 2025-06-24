@@ -1,6 +1,6 @@
 import "swiper/css/bundle";
 import Swiper from "swiper";
-import {FreeMode, Mousewheel, Pagination, Scrollbar} from "swiper/modules";
+import {FreeMode, Mousewheel, Pagination} from "swiper/modules";
 
 export default function aboutPage() {
   initHistory();
@@ -105,4 +105,12 @@ function initHistory() {
   });
 
 
+  const onPointerUp = () => {
+    slider.classList.remove('about-history-slider--grabbing');
+    window.removeEventListener('pointerup', onPointerUp);
+  };
+  slider.addEventListener('pointerdown', () => {
+    slider.classList.add('about-history-slider--grabbing');
+    window.addEventListener('pointerup', onPointerUp);
+  });
 }

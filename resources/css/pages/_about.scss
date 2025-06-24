@@ -80,6 +80,11 @@
 
 .about-history-slider {
   overflow: visible;
+  cursor: grab;
+
+  &--grabbing {
+    cursor: grabbing;
+  }
   .swiper-slide {
     padding-top: 64px;
     padding-bottom: 96px;
