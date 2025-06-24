@@ -30,11 +30,14 @@ console_print('==== CLEAR FILES ====', 'yellow');
 
 $to_clean = [
     DIST_PATH . '/resources',
-    DIST_PATH . '/index.php'
+    DIST_PATH . '/index.php',
+    BASE_PATH . '/.vite',
 ];
 foreach ($to_clean as $file) {
-    console_print("Delete $file");
-    rm($file);
+    if(file_exists($file)) {
+        console_print("Delete $file");
+        rm($file);
+    }
 }
 
 
@@ -120,7 +123,7 @@ if (isset($my_args['commit'])) {
 
         $updating_files = scandir(DIST_PATH);
 
-        $files = scandir(__DIR__);
+        $files = scandir(BASE_PATH);
         array_shift($files);
         array_shift($files);
         $files = array_intersect($files, $updating_files);
@@ -128,7 +131,7 @@ if (isset($my_args['commit'])) {
         foreach ($files as $file)
             rm(BASE_PATH . '/' . $file);
 
-        foreach (array_intersect(scandir(DIST_PATH), ['..', '.']) as $file)
+        foreach (array_diff(scandir(DIST_PATH), ['..', '.']) as $file)
             rcopy(DIST_PATH . '/' . $file, BASE_PATH . '/' . $file);
 
         console_print("\n-- Committing $new_branch", 'blue');
@@ -202,6 +205,9 @@ function console_print(string $text, $color = null): void
 
 function rm(string $dir): void
 {
+    if(!file_exists($dir))
+        return;
+
     if(is_file($dir)) {
         unlink($dir);
         return;
@@ -241,7 +247,7 @@ function rcopy(string $from, string $to): void
 function ask(string $question, string $default = ''): string {
     printf("%s (%s): ", $question, $default);
 
-    fscanf(STDIN, "%s", $result);
+    $result = fgets(STDIN);
 
     if(empty(trim($result)))
         return $default;
