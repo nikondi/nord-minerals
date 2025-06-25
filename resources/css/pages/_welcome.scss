@@ -327,17 +327,15 @@
 
 .client-slide {
   height: auto;
-
-  img {
-    width: 100%;
-    object-fit: contain;
-  }
 }
 
 .client-link {
   img {
     filter: grayscale(100%);
     transition: .2s filter;
+    width: 100%;
+    height: 130px;
+    object-fit: contain;
   }
 
   &:hover img {
@@ -350,8 +348,8 @@
     padding-top: 24px;
     padding-bottom: 40px;
   }
-  .client-slide {
-    width: auto;
+  .client-link img {
+    width: 150px;
   }
   .clients-slider-container {
     margin-top: 16px;
@@ -374,6 +372,9 @@
   }
   .clients-slider {
     overflow: visible;
+  }
+  .client-slide {
+    width: auto;
   }
 }
 

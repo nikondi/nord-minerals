@@ -46,6 +46,7 @@ function initClientsSlider() {
     modules: [Navigation, Pagination],
     centeredSlides: true,
     centeredSlidesBounds: true,
+    spaceBetween: 24,
     navigation: {
       prevEl: container?.querySelector('.slider-arrow--prev') as HTMLElement,
       nextEl: container?.querySelector('.slider-arrow--next') as HTMLElement,
@@ -61,10 +62,13 @@ function initClientsSlider() {
         slidesPerView: 4,
         slidesPerGroup: 4,
         centeredSlides: false,
+        centeredSlidesBounds: false,
       },
       1101: {
-        slidesPerView: 7,
-        slidesPerGroup: 7,
+        slidesPerView: 6,
+        slidesPerGroup: 6,
+        centeredSlides: false,
+        centeredSlidesBounds: false,
       }
     }
   })
