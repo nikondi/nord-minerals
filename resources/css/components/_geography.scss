@@ -44,6 +44,7 @@
 
 .geography-map {
   width: 1440px;
+  height: 100%;
   position: absolute;
   transition: .1s left ease-out;
   will-change: left;
