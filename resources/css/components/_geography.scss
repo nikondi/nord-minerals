@@ -66,6 +66,7 @@
   --anim-duration: .4s;
   --anim-delay: .1s;
   cursor: default;
+  transform: translate(-10px, -12px);
 
   &__inner {
     width: 0;
