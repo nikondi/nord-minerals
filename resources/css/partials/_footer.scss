@@ -130,3 +130,34 @@
     }
   }
 }
+
+
+.scroll-up {
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  border: none;
+  height: 45px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: fixed;
+  z-index: 100;
+  bottom: -45px;
+  right: 25px;
+  transition: .3s bottom;
+  will-change: bottom;
+  &.active {
+    bottom: 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  .scroll-up {
+    right: 10px;
+    &.active {
+      bottom: 10px;
+    }
+  }
+}

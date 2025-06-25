@@ -2,7 +2,7 @@ import {lockBody, unlockBody} from "@/helpers/popup";
 
 export default function initHeader() {
   initBurger();
-  initSticky();
+  initScrollUp();
 }
 
 function initBurger() {
@@ -50,26 +50,20 @@ function initBurger() {
   });
 }
 
-function initSticky() {
-  const header = document.querySelector('.header') as HTMLElement;
+function initScrollUp() {
+  const button = document.querySelector('.scroll-up') as HTMLButtonElement;
 
-  const media = window.matchMedia("(min-width: 768px)");
-
-  const checkSticky = () => {
-    if(header.getBoundingClientRect().top == 0)
-      header.classList.add("sticky");
+  const checkScroll = () => {
+    if(window.scrollY > 300)
+      button.classList.add("active");
     else
-      header.classList.remove("sticky");
-  }
+      button.classList.remove("active");
+  };
 
-  const checkMedia = () => {
-    if(media.matches)
-      window.addEventListener("scroll", checkSticky);
-    else
-      window.removeEventListener("scroll", checkSticky);
-  }
+  checkScroll();
+  window.addEventListener('scroll', checkScroll);
 
-  checkMedia();
-  media.addEventListener('change', checkMedia);
-
+  button.addEventListener("click", () => {
+    window.scrollTo({top: 0, behavior: "smooth"});
+  });
 }

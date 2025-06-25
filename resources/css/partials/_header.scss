@@ -3,11 +3,8 @@
 .header {
   position: sticky;
   top: 0;
-  background: linear-gradient(180deg, #425666 5.66%, rgba(66, 86, 102, 0) 83.79%);
+  background-color: #425666;
   z-index: 600;
-  &.sticky .nav a.active:not(:hover) {
-    border-color: rgba(0, 0, 0, 0);
-  }
 }
 
 .top-header {
@@ -38,7 +35,7 @@
 
     li > a {
       display: block;
-      padding: 25px;
+      padding: 25px 25px 19px 25px;
 
       font-weight: 300;
       font-size: 24px;
