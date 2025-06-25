@@ -54,8 +54,8 @@ function initHistory() {
     mousewheel: {
       enabled: true,
       releaseOnEdges: true,
-
     },
+    grabCursor: true,
     freeMode: true,
     on: {
       init: (instance) => {
@@ -102,15 +102,5 @@ function initHistory() {
       moving = false;
 
     handleTranslate(swiper, swiper.translate);
-  });
-
-
-  const onPointerUp = () => {
-    slider.classList.remove('about-history-slider--grabbing');
-    window.removeEventListener('pointerup', onPointerUp);
-  };
-  slider.addEventListener('pointerdown', () => {
-    slider.classList.add('about-history-slider--grabbing');
-    window.addEventListener('pointerup', onPointerUp);
   });
 }
