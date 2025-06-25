@@ -6,75 +6,82 @@ export default function initContacts() {
 
 
 function initMap() {
-  const wrapper = document.querySelector('.cg-wrapper');
+  const wrapper = document.querySelector('.contacts-geography');
   const popup = wrapper?.querySelector('.cg-popup') as HTMLElement;
 
   if (!wrapper)
     return;
 
+  let currentDot: HTMLElement = null;
+
   popup.classList.add('js-enabled');
 
-  wrapper.querySelectorAll('.cg-dot').forEach((dot: HTMLElement) => {
-    const data = dot.dataset.dot?JSON.parse(dot.dataset.dot):null as ContactsMapDot;
+  const expandDot = (dot: HTMLElement, activeClass: string = 'hovered') => {
     const text = dot.querySelector('.cg-dot__text') as HTMLElement;
     const width = text.scrollWidth;
 
+    text.style.width = width + 'px';
+    dot.classList.add(activeClass);
+  }
+  const hideDot = (dot: HTMLElement, activeClass: string = 'hovered') => {
+    if(!dot)
+      return;
+
+    const text = dot.querySelector('.cg-dot__text') as HTMLElement;
+    text.style.width = text.getBoundingClientRect().width+'px';
+    dot.classList.remove(activeClass);
+    setTimeout(() => text.style.width = null);
+  }
+
+  wrapper.querySelectorAll('.cg-dot').forEach((dot: HTMLElement) => {
+    const data = dot.dataset.dot?JSON.parse(dot.dataset.dot):null as ContactsMapDot;
+
     dot.addEventListener('mouseenter', () => {
-      text.style.width = width + 'px';
-      dot.classList.add('hovered');
+      expandDot(dot);
     });
     dot.addEventListener('mouseleave', () => {
-      text.style.width = null;
-      dot.classList.remove('hovered')
+      hideDot(dot);
     });
 
     if(popup) {
       dot.addEventListener('click', () => {
         if (dot.classList.contains('active'))
           return;
-        dot.classList.add('active');
-        openDotPopup(dot, data);
+        currentDot = dot;
+        expandDot(dot, 'active');
+        openDotPopup(data);
       });
     }
   });
-}
 
-function openDotPopup(dot: HTMLElement, data: ContactsMapDot) {
-  const wrapper = document.querySelector('.cg-wrapper');
-  const popup = wrapper.querySelector('.cg-popup') as HTMLElement;
+  initDotPopup();
 
-  initDotPopup(popup, dot);
 
-  const popupInner = popup.querySelector('.cg-popup-dot') as HTMLElement;
+  function openDotPopup(data: ContactsMapDot) {
+    const popupInner = popup.querySelector('.cg-popup-dot') as HTMLElement;
 
-  popupInner.innerHTML = `<div class="cg-popup-dot__title">${data.title}</div>`;
-  if(data.address)
-    popupInner.innerHTML += `<div class="cg-popup-dot__address">${data.address}</div>`;
-  if(data.phone)
-    popupInner.innerHTML += `<a href="tel:${data.phone}" class="cg-popup-dot__contact">${data.phone}</a>`;
-  if(data.email)
-    popupInner.innerHTML += `<a href="mailto:${data.email}" class="cg-popup-dot__contact">${data.email}</a>`;
+    popupInner.innerHTML = `<div class="cg-popup-dot__title">${data.title}</div>`;
+    if(data.address)
+      popupInner.innerHTML += `<div class="cg-popup-dot__address">${data.address}</div>`;
+    if(data.phone)
+      popupInner.innerHTML += `<a href="tel:${data.phone}" class="cg-popup-dot__contact">${data.phone}</a>`;
+    if(data.email)
+      popupInner.innerHTML += `<a href="mailto:${data.email}" class="cg-popup-dot__contact">${data.email}</a>`;
 
-  popup.classList.add('active');
-
-}
-
-function initDotPopup(popup: HTMLElement, dot: HTMLElement) {
-  if(popup.classList.contains('inited'))
-    return;
-
-  const background = popup.querySelector('.cg-popup-background') as HTMLElement;
-  const button = popup.querySelector('.cg-popup-close') as HTMLElement;
-  const text = dot.querySelector('.cg-dot__text') as HTMLElement;
-
-  const closePopup = () => {
-    popup.classList.remove('active');
-
-    text.style.width = text.getBoundingClientRect().width + 'px';
-    dot.classList.remove('active');
-    setTimeout(() => text.style.width = null)
+    popup.classList.add('active');
   }
 
-  background.addEventListener('click', closePopup)
-  button.addEventListener('click', closePopup)
+  function initDotPopup() {
+    const closePopup = () => {
+      popup.classList.remove('active');
+      hideDot(currentDot, 'active');
+      currentDot = null;
+    }
+
+    popup.querySelector('.cg-popup-content')?.addEventListener('click', (e) => e.stopPropagation());
+
+    wrapper.querySelectorAll('.cg-popup-close-trigger').forEach((el: HTMLElement) => {
+      el.addEventListener('click', closePopup);
+    });
+  }
 }

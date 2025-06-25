@@ -73,14 +73,9 @@
 }
 
 
-.cg-wrapper {
-  margin: 0 auto;
-  max-width: 1440px;
-  position: relative;
-  overflow: hidden;
-}
-.cg-map {
-  mix-blend-mode: multiply;
+/* CONTACTS GEOGRAPHY */
+.contacts-geography {
+  background-color: rgba(83, 101, 119, 0.4);
 }
 
 .cg-dots {
@@ -172,10 +167,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 10;
+  z-index: 20;
   visibility: hidden;
+  opacity: 0;
 
-  transition: .5s visibility;
+  transition: {
+    duration: .3s;
+    property: opacity, visibility;
+  };
 
   &:not(.js-enabled) {
     display: none;
@@ -183,40 +182,49 @@
 
   &.active {
     visibility: visible;
-
-    .cg-popup-content {
-      transform: translateX(0);
-    }
-    .cg-popup-background {
-      opacity: 1;
-    }
+    opacity: 1;
   }
 }
+.cg-popup-wrapper {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.cg-popup-inner {
+  padding: 0;
+  overflow: hidden;
+}
+.cg-popup-fill {
+  flex: 1;
+  &--white {
+    background-color: #BCCBD6;
+  }
+}
+
 .cg-popup-background {
   background-color: rgba(38, 47, 54, 0.7);
   width: 100%;
   height: 100%;
-  transition: .5s opacity;
-  opacity: 0;
 }
 
 .cg-popup-content {
-  position: absolute;
-  top: 0;
-  left: 0;
   background-color: #BCCBD6;
   width: 100%;
   max-width: 675px;
   height: 100%;
   overflow: auto;
-  transform: translateX(-100%);
-  will-change: transform;
-
-  transition: .5s transform;
+  position: relative;
+  transition: {
+    duration: .5s;
+    property: transform;
+  };
 
   display: flex;
   align-items: center;
-  padding: 48px;
+  padding: 48px 48px 48px 20px;
 }
 .cg-popup-close {
   position: absolute;
@@ -268,7 +276,7 @@
 }
 
 
-@media (max-width: 1440px) {
+@media (max-width: 767px) {
   .contacts-geography {
     display: none;
   }
