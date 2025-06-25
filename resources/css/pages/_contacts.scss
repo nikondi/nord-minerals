@@ -98,6 +98,7 @@
     property: background-color;
   };
   cursor: pointer;
+  transform: translate(-10px, -20px);
 
   &:before {
     content: '';
