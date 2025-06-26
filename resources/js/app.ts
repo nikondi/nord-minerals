@@ -1,5 +1,5 @@
 import {initDirections, initGallery, initHeader} from "@/components";
-import {aboutPage, contactsPage, newsPage, welcomePage} from "@/pages";
+import {aboutPage, contactsPage, newsPage, projectsPage, welcomePage} from "@/pages";
 
 document.addEventListener('DOMContentLoaded', function() {
   /* COMPONENTS */
@@ -13,5 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
   aboutPage();
   newsPage();
   contactsPage();
+  projectsPage();
   /* PAGES */
 })

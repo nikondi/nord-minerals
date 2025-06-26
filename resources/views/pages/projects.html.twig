@@ -1,0 +1,44 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <section class="page-heading projects-first">
+        <div class="page-heading-wrapper">
+            <div class="page-heading-background">
+                <picture>
+                    <source srcset="/assets/img/pages/projects/first-background-mobile.png" media="(max-width: 767px)"/>
+                    <img src="/assets/img/pages/projects/first-background.png" alt=""/>
+                </picture>
+            </div>
+            <div class="container page-heading-container">
+                <h1 class="block-heading">Проекты</h1>
+                <div class="page-heading__text">
+                    Высокая эффективность работы, что подтверждается увеличением производительности клиентов до 100%,
+                    снижением эксплуатационных затрат на 15-20% и значительным повышением надежности оборудования.
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    {% set projects = [
+        {title: 'Плавучая насосная станция', place: 'Казахстан', image: '/assets/img/sample/projects/1.jpg', link: '#',
+            description: 'Nord Minerals успешно собрала плавучую насосную станцию в Казахстане, оснащенную четырьмя насосными установками ROITECH, которая готова к эксплуатации. Станция, способная перекачивать 600 м³/ч, будет работать в экстремальных условиях, обеспечивая надежную производительность при температурах от -45°C до +45°C.'},
+        {title: 'Шламовый насос ROITECH', place: 'Казахстан', image: '/assets/img/sample/projects/2.jpg', link: '#',
+            description: 'Nord Minerals успешно провела пилотные испытания шламового насоса ROITECH 8/6 в Армении, который проработал более 6,700 часов без сбоев, что на 50% превышает ожидаемый срок службы. Также, сервисная команда Nord Minerals привлечена к консультации по дробильному оборудованию Metso и помогает решать операционные проблемы.'},
+        {title: 'Подеземный дробильный комплекс', place: 'Казахстан', image: '/assets/img/sample/projects/3.jpg', link: '#',
+            description: 'Nord Minerals успешно собрала плавучую насосную станцию в Казахстане, оснащенную четырьмя насосными установками ROITECH, которая готова к эксплуатации. Станция, способная перекачивать 600 м³/ч, будет работать в экстремальных условиях, обеспечивая надежную производительность при температурах от -45°C до +45°C.'},
+        {title: 'Поставка оборудования ROITECH', place: 'Казахстан', image: '/assets/img/sample/projects/4.jpg', link: '#',
+            description: 'Nord Minerals успешно провела пилотные испытания шламового насоса ROITECH 8/6 в Армении, который проработал более 6,700 часов без сбоев, что на 50% превышает ожидаемый срок службы. Также, сервисная команда Nord Minerals привлечена к консультации по дробильному оборудованию Metso и помогает решать операционные проблемы.'},
+    ] %}
+    <section class="wrapper-section projects-list-wrapper"
+             data-endpoint="/projects/more"
+             data-per_page="4"
+    >
+        <div class="projects-list">
+            {% for project in projects %}
+                {% include "components/projects/item.html.twig" %}
+            {% endfor %}
+        </div>
+        <button type="button" class="btn projects-show-more">показать ещё</button>
+    </section>
+{% endblock %}

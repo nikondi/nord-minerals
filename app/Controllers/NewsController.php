@@ -32,7 +32,7 @@ class NewsController extends Controller
 
         $results = implode('',
             array_map(fn($item) => $this->render('components/news/card', $item),
-                array_fill(0, $has_more?9:5, ['news_item' => [
+                array_fill(0, $has_more?$per_page:(max(0, $per_page - 4)), ['news_item' => [
                     'title' => 'Заголовок новости',
                     'date' => '12 февраля 2025',
                     'thumbnail' => '/assets/img/sample/news/2.jpg',

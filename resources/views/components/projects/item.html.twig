@@ -1,0 +1,14 @@
+<div class="project-item">
+    <div class="project-item-text">
+        <a href="{{ project.link }}" class="project-item__title">
+            {{ project.title }}
+        </a>
+        <div class="project-item__place">{{ project.place }}</div>
+    </div>
+    <div class="project-item-description">
+        {{ project.description | raw }}
+    </div>
+    <div class="project-item-image">
+        <img src="{{ project.image }}" alt="">
+    </div>
+</div>

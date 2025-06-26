@@ -1,13 +1,13 @@
 import axios from "axios";
 
-export default function initNews() {
-  initList();
+export default function projectsPage() {
+  initProjectsList();
 }
 
-function initList() {
-  const wrapper = document.querySelector('.news-list-wrapper') as HTMLElement;
-  const list = wrapper?.querySelector('.news-list') as HTMLElement;
-  const button = wrapper?.querySelector('.news-show-more') as HTMLButtonElement;
+function initProjectsList() {
+  const wrapper = document.querySelector('.projects-list-wrapper') as HTMLElement;
+  const list = wrapper?.querySelector('.projects-list') as HTMLElement;
+  const button = wrapper?.querySelector('.projects-show-more') as HTMLButtonElement;
 
   if(!wrapper || !list)
     return;
@@ -20,15 +20,10 @@ function initList() {
   const onBefore = () => {
     wrapper.classList.add('loading');
     button.disabled = true;
-    for(let i = 0; i < per_page; i++)
-      list.innerHTML += '<div class="skeleton news-card-skeleton"></div>';
-
   };
   const onFinally = () => {
     wrapper.classList.remove('loading');
     button.disabled = false;
-
-    list.querySelectorAll('.news-card-skeleton').forEach((element) => element.remove());
   };
 
   button.addEventListener('click', () => {
@@ -56,4 +51,6 @@ function initList() {
         onFinally();
       });
   });
+
+
 }
