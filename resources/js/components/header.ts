@@ -31,7 +31,7 @@ function initBurger() {
       openMenu();
   });
 
-  const media = window.matchMedia("(min-width: 768px)");
+  const media = window.matchMedia("(min-width: 1101px)");
   const checkMedia = () => {
     if(media.matches) {
       mobileMenu.classList.remove("inited");
