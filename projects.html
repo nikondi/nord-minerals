@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Услуги</title>
+    <title>Проекты</title>
 
     <link rel="stylesheet" href="assets/fonts/AkzidenzGroteskPro/stylesheet.css">
 <script type="module">import.meta.url;import("_").catch(()=>1);(async function*(){})().next();if(location.protocol!="file:"){window.__vite_is_modern_browser=true}</script>
@@ -35,8 +35,8 @@
         <nav class="nav">
             <ul>
                 <li><a href="about.html" >О нас</a></li>
-                <li><a href="services.html" class="active">Услуги</a></li>
-                <li><a href="projects.html" >Проекты</a></li>
+                <li><a href="services.html" >Услуги</a></li>
+                <li><a href="projects.html" class="active">Проекты</a></li>
                 <li><a href="#">Партнёры</a></li>
                 <li><a href="news.html" >Новости</a></li>
                 <li><a href="#">Карьера</a></li>
@@ -58,92 +58,85 @@
 </header>
 
 
-    <section class="page-heading services-first">
+    <section class="page-heading projects-first">
         <div class="page-heading-wrapper">
             <div class="page-heading-background">
-                <img src="assets/img/pages/services/first-background.png" alt="">
+                <picture>
+                    <source srcset="assets/img/pages/projects/first-background-mobile.png" media="(max-width: 767px)"/>
+                    <img src="assets/img/pages/projects/first-background.png" alt=""/>
+                </picture>
             </div>
             <div class="container page-heading-container">
-                <h1 class="block-heading">Услуги</h1>
+                <h1 class="block-heading">Проекты</h1>
                 <div class="page-heading__text">
-                    EPSS-решения повышают эффективность и конкурентоспособность клиентов, предоставляя им инструменты
-                    для оптимизации энергопотребления, внедрения возобновляемых источников энергии, модернизации
-                    оборудования и соблюдения экологических стандартов.
+                    Высокая эффективность работы, что подтверждается увеличением производительности клиентов до 100%,
+                    снижением эксплуатационных затрат на 15-20% и значительным повышением надежности оборудования.
                 </div>
             </div>
         </div>
     </section>
 
-        <section class="services-list">
-                    <a href="services_single.html" class="service-item">
-    <div class="service-item-background">
-        <picture>
-            <source srcset="assets/img/pages/services/list/engineering-mobile.png" media="(max-width: 767px)">
-            <img src="assets/img/pages/services/list/engineering.png" alt="">
-        </picture>
+
+        <section class="wrapper-section projects-list-wrapper"
+             data-endpoint="projects_more.html"
+             data-per_page="4"
+    >
+        <div class="projects-list">
+                            <div class="project-item">
+    <div class="project-item-text">
+        <a href="#" class="project-item__title">
+            Плавучая насосная станция
+        </a>
+        <div class="project-item__place">Казахстан</div>
     </div>
-    <div class="container service-item-container">
-        <div class="service-item__letter">E</div>
-        <div class="service-item__text">
-            <div class="service-item__title">Инжиниринг под ключ</div>
-            <div class="service-item__description">Инженеры Nord Minerals разрабатывают технологические решения и&nbsp;автоматизируют процессы на&nbsp;всех этапах проекта</div>
-        </div>
-        <svg width="32" height="32" class="service-item__arrow">
-            <use xlink:href="assets/img/arrows/round-arrows.svg#right"></use>
-        </svg>
+    <div class="project-item-description">
+        Nord Minerals успешно собрала плавучую насосную станцию в Казахстане, оснащенную четырьмя насосными установками ROITECH, которая готова к эксплуатации. Станция, способная перекачивать 600 м³/ч, будет работать в экстремальных условиях, обеспечивая надежную производительность при температурах от -45°C до +45°C.
     </div>
-</a>                    <a href="services_single.html" class="service-item">
-    <div class="service-item-background">
-        <picture>
-            <source srcset="assets/img/pages/services/list/supply-mobile.png" media="(max-width: 767px)">
-            <img src="assets/img/pages/services/list/supply.png" alt="">
-        </picture>
+    <div class="project-item-image">
+        <img src="assets/img/sample/projects/1.jpg" alt="">
     </div>
-    <div class="container service-item-container">
-        <div class="service-item__letter">P</div>
-        <div class="service-item__text">
-            <div class="service-item__title">Поставка оборудования</div>
-            <div class="service-item__description">Nord Minerals поставляет оборудование, запчасти и&nbsp;материалы от&nbsp;ведущих мировых производителей, обеспечивая бесперебойную работу и&nbsp;стабильную производительность</div>
-        </div>
-        <svg width="32" height="32" class="service-item__arrow">
-            <use xlink:href="assets/img/arrows/round-arrows.svg#right"></use>
-        </svg>
+</div>                            <div class="project-item">
+    <div class="project-item-text">
+        <a href="#" class="project-item__title">
+            Шламовый насос ROITECH
+        </a>
+        <div class="project-item__place">Казахстан</div>
     </div>
-</a>                    <a href="services_single.html" class="service-item">
-    <div class="service-item-background">
-        <picture>
-            <source srcset="assets/img/pages/services/list/control-mobile.png" media="(max-width: 767px)">
-            <img src="assets/img/pages/services/list/control.png" alt="">
-        </picture>
+    <div class="project-item-description">
+        Nord Minerals успешно провела пилотные испытания шламового насоса ROITECH 8/6 в Армении, который проработал более 6,700 часов без сбоев, что на 50% превышает ожидаемый срок службы. Также, сервисная команда Nord Minerals привлечена к консультации по дробильному оборудованию Metso и помогает решать операционные проблемы.
     </div>
-    <div class="container service-item-container">
-        <div class="service-item__letter">S</div>
-        <div class="service-item__text">
-            <div class="service-item__title">Контроль<br />и ввод в эксплуатацию</div>
-            <div class="service-item__description">Специалисты Nord Minerals контролируют шефмонтажные и&nbsp;пусконаладочные работы, гарантируя, что&nbsp;оборудование работает в&nbsp;заявленных режимах</div>
-        </div>
-        <svg width="32" height="32" class="service-item__arrow">
-            <use xlink:href="assets/img/arrows/round-arrows.svg#right"></use>
-        </svg>
+    <div class="project-item-image">
+        <img src="assets/img/sample/projects/2.jpg" alt="">
     </div>
-</a>                    <a href="services_single.html" class="service-item">
-    <div class="service-item-background">
-        <picture>
-            <source srcset="assets/img/pages/services/list/service-mobile.png" media="(max-width: 767px)">
-            <img src="assets/img/pages/services/list/service.png" alt="">
-        </picture>
+</div>                            <div class="project-item">
+    <div class="project-item-text">
+        <a href="#" class="project-item__title">
+            Подеземный дробильный комплекс
+        </a>
+        <div class="project-item__place">Казахстан</div>
     </div>
-    <div class="container service-item-container">
-        <div class="service-item__letter">S</div>
-        <div class="service-item__text">
-            <div class="service-item__title">Сервисные услуги</div>
-            <div class="service-item__description">Nord Minerals берет на&nbsp;себя обслуживание оборудования (в&nbsp;том&nbsp;числе того, которое было поставлено не&nbsp;нами), организует плановый и&nbsp;аварийный сервис и&nbsp;гарантирует высокий уровень&nbsp;КТГ</div>
-        </div>
-        <svg width="32" height="32" class="service-item__arrow">
-            <use xlink:href="assets/img/arrows/round-arrows.svg#right"></use>
-        </svg>
+    <div class="project-item-description">
+        Nord Minerals успешно собрала плавучую насосную станцию в Казахстане, оснащенную четырьмя насосными установками ROITECH, которая готова к эксплуатации. Станция, способная перекачивать 600 м³/ч, будет работать в экстремальных условиях, обеспечивая надежную производительность при температурах от -45°C до +45°C.
     </div>
-</a>            </section>
+    <div class="project-item-image">
+        <img src="assets/img/sample/projects/3.jpg" alt="">
+    </div>
+</div>                            <div class="project-item">
+    <div class="project-item-text">
+        <a href="#" class="project-item__title">
+            Поставка оборудования ROITECH
+        </a>
+        <div class="project-item__place">Казахстан</div>
+    </div>
+    <div class="project-item-description">
+        Nord Minerals успешно провела пилотные испытания шламового насоса ROITECH 8/6 в Армении, который проработал более 6,700 часов без сбоев, что на 50% превышает ожидаемый срок службы. Также, сервисная команда Nord Minerals привлечена к консультации по дробильному оборудованию Metso и помогает решать операционные проблемы.
+    </div>
+    <div class="project-item-image">
+        <img src="assets/img/sample/projects/4.jpg" alt="">
+    </div>
+</div>                    </div>
+        <button type="button" class="btn projects-show-more">показать ещё</button>
+    </section>
 
 <footer class="footer">
     <div class="container footer-logo">
