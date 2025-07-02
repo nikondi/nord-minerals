@@ -28,9 +28,12 @@
   &__list {
     display: flex;
     justify-content: space-between;
+    align-items: stretch;
+    column-gap: 10px;
   }
 
   &__item {
+    flex: 1;
     font-weight: 300;
     font-size: 13px;
     line-height: 140%;
@@ -91,11 +94,19 @@
   }
   .footer-bottom,
   .footer-info {
+    justify-content: flex-start;
+    align-items: stretch;
     flex-direction: column;
     row-gap: 24px;
   }
-  .footer-menu {
+  .footer-menu ul {
     columns: 2;
+    li {
+      width: 100%;
+      display: inline-block;
+      vertical-align: top;
+      margin-bottom: 8px;
+    }
   }
   .footer-contacts {
     .footer-title {

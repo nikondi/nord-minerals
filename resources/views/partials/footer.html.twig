@@ -16,24 +16,15 @@
             <div class="footer-contacts">
                 <div class="footer-title"><a href="#">Контакты</a></div>
                 <div class="footer-contacts__list">
-                    <div class="footer-contacts__item">
-                        Джакарта, Индонезия<br />
-                        Головной офис в регионе<br />
-                        Юго-Восточная Азия<br />
-                        <a href="mailto:info@ndminerals.com">info@ndminerals.com</a>
-                    </div>
-                    <div class="footer-contacts__item">
-                        Джакарта, Индонезия<br />
-                        Головной офис в регионе<br />
-                        Юго-Восточная Азия<br />
-                        <a href="mailto:info@ndminerals.com">info@ndminerals.com</a>
-                    </div>
-                    <div class="footer-contacts__item">
-                        Джакарта, Индонезия<br />
-                        Головной офис в регионе<br />
-                        Юго-Восточная Азия<br />
-                        <a href="mailto:info@ndminerals.com">info@ndminerals.com</a>
-                    </div>
+                    {% for contact in [
+                        'Йоханнесбург, ЮАР<br /> Штаб-квартира управляющей компании NDML',
+                        'Алматы, Республика Казахстан<br /> Головной офис в регионе Евразия',
+                        'Джакарта, Индонезия<br />Головной офис в регионе Юго-<br />Восточная Азия'
+                    ] %}
+                        <div class="footer-contacts__item">
+                            {{ contact | raw }}
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
             <div class="footer-socials">
