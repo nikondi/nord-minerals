@@ -1,8 +1,10 @@
 .geography {
+  --map-background: #425666;
+
   height: 794px;
   overflow: hidden;
   position: relative;
-  background-color: #425666;
+  background-color: var(--map-background, #425666);
 
   .block-heading {
     padding-top: 48px;
@@ -43,6 +45,7 @@
 }
 
 .geography-map {
+  background-color: var(--map-background, #425666);
   width: 1440px;
   height: 100%;
   position: absolute;
