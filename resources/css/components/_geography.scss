@@ -1,7 +1,7 @@
 .geography {
   --map-background: #425666;
 
-  height: 794px;
+  height: 844px;
   overflow: hidden;
   position: relative;
   background-color: var(--map-background, #425666);
@@ -34,13 +34,12 @@
 }
 
 .geography-background {
-  height: 1152px;
+  height: 100%;
   mix-blend-mode: multiply;
   max-width: unset;
   position: absolute;
-  top: -360px;
+  top: 0;
   right: 0;
-  transform: translateX(210px);
   pointer-events: none;
 }
 
