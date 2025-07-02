@@ -94,4 +94,27 @@
         '/assets/img/sample/gallery.png',
     ] %}
     {% include 'components/gallery.html.twig' %}
+
+    {% set instruments = [
+        {image: '/assets/img/pages/service/instr-1.svg', text: '3D и 4D-моделирование'},
+        {image: '/assets/img/pages/service/instr-2.svg', text: 'Прогрессивная система технического документооборота'},
+        {image: '/assets/img/pages/service/instr-3.svg', text: 'Современные способы сбора исходных данных'},
+    ] %}
+    <section class="service-instruments">
+        <div class="container">
+            <div class="block-heading">Инновационные инструменты</div>
+            <div class="service-instruments-list">
+                {% for instrument in instruments %}
+                    <div class="service-instrument">
+                        <div class="service-instrument__icon">
+                            <img src="{{ instrument.image }}" alt="">
+                        </div>
+                        <div class="service-instrument__text">
+                            {{ instrument.text }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 {% endblock %}
