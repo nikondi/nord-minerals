@@ -9,6 +9,7 @@ export default function initWelcome() {
   initClientsSlider();
   initGeography();
   initNewsSlider();
+  initVideo();
 }
 
 function initFirstSlider() {
@@ -245,4 +246,12 @@ function initNewsSlider() {
 
   checkSlider();
   media.addEventListener('change', checkSlider);
+}
+
+function initVideo() {
+  const video = document.querySelector(".wf-background video") as HTMLVideoElement;
+  if (video) {
+    video.muted = true;
+    video.play();
+  }
 }
