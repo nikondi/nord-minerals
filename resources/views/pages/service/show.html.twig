@@ -20,30 +20,20 @@
     </section>
 
     <section class="service-stages">
-        <div class="service-stage">
-            <img src="/assets/img/big-numbers/1.svg" alt="">
-            <div class="service-stage__text">
-                Подбор оборудования, поставка запасных частей и&nbsp;материалов ведущих мировых производителей
+        {% for stage in [
+            {number: 1, text: 'Подбор оборудования, поставка запасных частей и&nbsp;материалов ведущих мировых производителей'},
+            {number: 2, text: 'Контроль качества изготовления<br/>на&nbsp;всех стадиях производства оборудования'},
+            {number: 3, text: 'Выполнение контрольной сборки'},
+            {number: 4, text: 'Консигнационные склады запасных частей'},
+            {number: 1, text: 'Консигнационные склады запасных частей'},
+        ] %}
+            <div class="service-stage">
+                <img src="/assets/img/big-numbers/{{ stage.number }}.svg" alt="">
+                <div class="service-stage__text">
+                    {{ stage.text | raw }}
+                </div>
             </div>
-        </div>
-        <div class="service-stage">
-            <img src="/assets/img/big-numbers/2.svg" alt="">
-            <div class="service-stage__text">
-                Контроль качества изготовления<br/>на&nbsp;всех стадиях производства оборудования
-            </div>
-        </div>
-        <div class="service-stage">
-            <img src="/assets/img/big-numbers/3.svg" alt="">
-            <div class="service-stage__text">
-                Выполнение контрольной сборки
-            </div>
-        </div>
-        <div class="service-stage">
-            <img src="/assets/img/big-numbers/4.svg" alt="">
-            <div class="service-stage__text">
-                Консигнационные склады запасных частей
-            </div>
-        </div>
+        {% endfor %}
     </section>
 
     {% set directions = [

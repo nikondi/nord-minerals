@@ -185,11 +185,11 @@
 
   }
   .geography-background {
-    height: 590px;
+    height: 485px;
     top: 0;
     transform: none;
     right: auto;
-    object-position: left -645px top -220px;
+    object-position: left -695px top -60px;
   }
   .geography-dots {
     display: none;
@@ -205,16 +205,17 @@
     position: static;
 
     &__count {
-      padding: 0;
+      padding: 0 18px;
 
       img {
         height: 140px;
+        object-fit: contain;
       }
     }
 
     &__text {
       position: static;
-      margin-top: 25px;
+      margin-top: 5px;
       font-size: 16px;
       line-height: 28px;
     }

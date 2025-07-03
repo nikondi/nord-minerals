@@ -51,6 +51,7 @@
     position: relative;
     padding-top: 44px;
     margin-top: 30px;
+    font-family: 'Akzidenz-Grotesk Pro', sans-serif;
 
     &:before {
       content: '';
@@ -72,6 +73,7 @@
           content: '';
           display: block;
           width: 11px;
+          min-width: 11px;
           height: 11px;
           background: #27B0C7;
           margin-top: 3px;
