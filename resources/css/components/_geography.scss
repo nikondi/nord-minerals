@@ -24,6 +24,10 @@
 
   &.grabbing {
     cursor: grabbing;
+    .geography-inner {
+      pointer-events: none;
+      user-select: none;
+    }
   }
 }
 
@@ -49,14 +53,13 @@
   height: 100%;
   position: absolute;
   transition: .1s left ease-out;
-  will-change: left;
 }
 
 .geography-dots {
   position: absolute;
   top: 0;
   right: 0;
-  width: 1440px;
+  width: 100%;
   height: 100%;
   z-index: 20;
 }
@@ -111,28 +114,6 @@
     top: 0;
     transition: var(--anim-duration, .3s) top;
   }
-
-  &:hover {
-    z-index: 1;
-
-    &:before {
-      transform: scale3d(1.666667, 1.6666667, 1);
-    }
-
-    &:after {
-      top: -7px;
-    }
-  }
-
-  &:hover &__inner {
-    width: 165px;
-    transition-delay: 0s, var(--anim-delay, .15s);
-    opacity: 1;
-
-    div {
-      transform: translateX(0);
-    }
-  }
 }
 
 .geography-infographic {
@@ -151,6 +132,32 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #FFFFFF;
+  }
+}
+
+@media (min-width: 768px) {
+  .geography-dot {
+    &:hover {
+      z-index: 1;
+
+      &:before {
+        transform: scale3d(1.666667, 1.6666667, 1);
+      }
+
+      &:after {
+        top: -7px;
+      }
+    }
+
+    &:hover &__inner {
+      width: 165px;
+      transition-delay: 0s, var(--anim-delay, .15s);
+      opacity: 1;
+
+      div {
+        transform: translateX(0);
+      }
+    }
   }
 }
 
@@ -179,21 +186,32 @@
       padding-top: 25px;
     }
   }
-  .geography-wrapper.grabbing .geography-inner {
-    pointer-events: none;
-    user-select: none;
 
+  .geography-map {
+    height: 310px;
+    width: 528px;
   }
+
+  .geography-dots,
   .geography-background {
-    height: 485px;
-    top: 0;
-    transform: none;
-    right: auto;
-    object-position: left -695px top -60px;
+    right: 75px;
   }
-  .geography-dots {
-    display: none;
+
+  .geography-dot {
+    transform: translate(-4px, -5px);
+    &:before {
+      width: 5px;
+      height: 5px;
+      top: 6px;
+      left: 1px;
+    }
+    &:after {
+      background-size: 100%;
+      width: 8px;
+      height: 4px;
+    }
   }
+
   .geography-inner {
     display: flex;
     flex-direction: column;
@@ -219,5 +237,12 @@
       font-size: 16px;
       line-height: 28px;
     }
+  }
+}
+
+@media (max-width: 400px) {
+  .geography-dots,
+  .geography-background {
+    right: 37px;
   }
 }
