@@ -110,6 +110,14 @@ body.ohidden {
   column-gap: 8px;
   color: #FFFFFF;
   text-decoration: none;
+
+  font-family: 'Akzidenz-Grotesk Pro', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+
+
   &:before {
     content: '';
     display: block;
