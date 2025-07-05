@@ -1,0 +1,204 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <section class="page-heading career-first">
+        <div class="page-heading-wrapper">
+            <div class="page-heading-background">
+                <picture>
+                    <source srcset="/assets/img/pages/career/first-background-mobile.png" media="(max-width: 767px)"/>
+                    <img src="/assets/img/pages/career/first-background.png" alt=""/>
+                </picture>
+            </div>
+            <div class="container page-heading-container">
+                <h1 class="block-heading">Карьера</h1>
+                <div class="page-heading__text">
+                    Присоединяйтесь к нашей команде профессионалов, где ваши таланты и амбиции найдут достойное
+                    применение, а компетентность и ответственность будут вознаграждены по достоинству.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/career/invite.html.twig' %}
+
+    {% set directions = [
+        {title: 'Продажи', icon: '/assets/img/sample/service/directions/sales.svg',
+            text: 'Команда продавцов выстраивает долгосрочные партнерские отношения и представляет компанию на отраслевых площадках'},
+        {title: 'Технический продукт', icon: '/assets/img/sample/service/directions/tech.svg',
+            text: 'Департаменты внедряют технические решения, занимаются поддержкой продаж и контролем качества'},
+        {title: 'Бэк-офис', icon: '/assets/img/sample/service/directions/monitor.svg',
+            text: 'Коллеги занимаются финансовым планированием и отчетностью, подбором и адаптацией персонала. Также здесь IT-специалисты, логистика, юридическая и административная поддержка'},
+    ] %}
+    <section class="career-directions directions-section">
+        <div class="container directions-section__wrapper">
+            <h2 class="block-heading">Важен каждый</h2>
+            <div class="directions-section-list">
+                {% for direction in directions %}
+                    {% include 'components/service/direction.html.twig' %}
+                {% endfor %}
+            </div>
+            <button class="directions-show-more btn">показать ещё</button>
+        </div>
+    </section>
+
+    {% set unions = [
+        {icon: '/assets/img/icons/upgrade.svg', text: 'Постоянные улучшения', description: 'Каждый день мы работаем, <br />чтобы стать лучше'},
+        {icon: '/assets/img/icons/win.svg', text: 'Вера в победу', description: 'Мы верим в успех и никогда <br />не сдаемся'},
+        {icon: '/assets/img/icons/team.svg', text: 'Командный дух', description: 'Все вместе мы можем добиться большего'},
+        {icon: '/assets/img/icons/respect.svg', text: 'Уважение', description: 'Мы уважаем друг друга'},
+        {icon: '/assets/img/icons/check.svg', text: 'Вовлечённость', description: 'Мы ценим честную работу <br />с полной отдачей'},
+        {icon: '/assets/img/icons/safety.svg', text: 'Безопасность', description: 'Человеческая жизнь бесценна.'},
+    ] %}
+    <section class="iconed-text-section">
+        <div class="container">
+            <div class="block-heading">Что нас объединяет</div>
+            <div class="iconed-text-list">
+                {% for item in unions %}
+                    {% include 'components/iconed-text.html.twig' %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="media-block-section">
+        <div class="media-block-inner">
+            <div class="container media-block-text">
+                <h2 class="block-heading media-block-text__title">Почему я ценю работу в Nord Minerals?</h2>
+                <div class="media-block-text__text">
+                    Nord Minerals создает надежныУ каждого из нас есть все возможности
+                    проявить себя с лучшей стороны. Поэтому цель компании — развивать сотрудников, поддерживать
+                    инициативу и
+                    давать возможность предложить новые идеи.
+                </div>
+            </div>
+            <div class="media-block-media media-block-slider swiper">
+                <div class="swiper-wrapper">
+                    {% for i in 1..3 %}
+                        <div class="swiper-slide">
+                            {# video, img или picture #}
+                            {# для video нужен враппер .media-block-media__video #}
+                            {% if i % 2 == 1 %}
+                                <div class="media-block-media__video">
+                                    <img src="/assets/img/sample/career/video-poster.png"
+                                         class="media-block-media__video-poster" alt="">
+
+                                    <video src="https://ndminerals.com/media/documents/NM_banner-1124x750.h264.mp4"></video>
+                                    <button class="media-block-media__video-play"></button>
+                                </div>
+                            {% else %}
+                                <img src="/assets/img/sample/career/office.png" alt=""/>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-pagination slider-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    {# Всё то же самое, только добавляются классы 'media-block-section--white' и 'media-block-section--mirror'  #}
+    <section class="media-block-section media-block-section--white media-block-section--mirror">
+        <div class="media-block-inner">
+            <div class="container media-block-text">
+                <h2 class="block-heading media-block-text__title">Комфортные офисы</h2>
+                <div class="media-block-text__text">
+                    Нам важно делать офис местом, где приятно работать и куда хочется возвращаться. Поэтому мы сделали
+                    их
+                    удобными для каждого. Наши рабочие места обеспечены современным оборудованием и переговорными
+                    комнатами.
+                    А еще в офисе – уютные кофе-поинты, где мы любим отдохнуть во время перерыва.
+                </div>
+            </div>
+            <div class="media-block-media media-block-slider swiper">
+                <div class="swiper-wrapper">
+                    {% for i in 1..3 %}
+                        <div class="swiper-slide">
+                            {# video, img или picture #}
+                            {# для video нужен враппер .media-block-media__video #}
+                            {% if i % 2 == 0 %}
+                                <div class="media-block-media__video">
+                                    <img src="/assets/img/sample/career/video-poster.png"
+                                         class="media-block-media__video-poster" alt="">
+
+                                    <video src="https://ndminerals.com/media/documents/NM_banner-1124x750.h264.mp4"></video>
+                                    <button class="media-block-media__video-play"></button>
+                                </div>
+                            {% else %}
+                                <img src="/assets/img/sample/career/office.png" alt=""/>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-pagination slider-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    {% set additional = [
+        {title: 'ДМС со стоматологией', icon: '/assets/img/icons/tooth.svg',
+            text: 'Используйте возможность получить медицинские услуги в частных или государственных клиниках по корпоративной программе страхования'},
+        {title: 'Каталог международ<wbr>ных журналов горной&nbsp;отрасли', icon: '/assets/img/icons/books.svg',
+            text: 'Читайте свежие статьи в нашей майнинг-библиотеке и повышайте уровень экспертизы'},
+        {title: 'Компенсация спорта', icon: '/assets/img/icons/tennis.svg',
+            text: 'Получите частичную оплату спортивных услуг от компании и платите за занятие фитнесом меньше'},
+        {title: 'ОБучение', icon: '/assets/img/icons/learn.svg',
+            text: 'Каждый новый сотрудник обучается новому с первого рабочего дня на корпоративной платформе дистанционного обучения'},
+        {title: 'Бесплатные бизнес-ланчи', icon: '/assets/img/icons/cook.svg',
+            text: 'Обедайте вместе с коллегами за счет компании'},
+        {title: 'Английский язык', icon: '/assets/img/icons/book-open.svg',
+            text: 'Учите иностранный язык при поддержке Nord Minerals'},
+        {title: 'Мобильная связь', icon: '/assets/img/icons/phone-plus.svg',
+            text: 'Воспользуйтесь преимуществами корпоративных тарифов с сохранением привычных мобильных номеров'},
+        {title: 'Бонусы <br/>и премии', icon: '/assets/img/icons/coins.svg',
+            text: 'Получите дополнительные денежные вознаграждения по успешной результатам работы'},
+    ] %}
+    <section class="directions-section">
+        <div class="container directions-section__wrapper">
+            <h2 class="block-heading">Приятные дополнения<br/>для сотрудников</h2>
+            <div class="directions-section-list">
+                {% for direction in additional %}
+                    {% include 'components/service/direction.html.twig' %}
+                {% endfor %}
+            </div>
+            <button class="directions-show-more btn">показать ещё</button>
+        </div>
+    </section>
+
+    {# Всё то же самое, только добавляются классы 'media-block-section--white', 'media-block-section--mirror', 'media-block-section--reverse'  #}
+    <section class="media-block-section media-block-section--white media-block-section--mirror media-block-section--reverse">
+        <div class="media-block-inner">
+            <div class="container media-block-text">
+                <h2 class="block-heading media-block-text__title">Корпоративная жизнь вне офиса</h2>
+                <div class="media-block-text__text">
+                    Мы хорошо работаем и активно отдыхаем. Корпоративные вечеринки, спортивные активности и командные
+                    соревнования – это то, что мы любим и где набираемся сил и энергии на будущие свершения.
+                </div>
+            </div>
+            <div class="media-block-media media-block-slider swiper">
+                <div class="swiper-wrapper">
+                    {% for i in 1..3 %}
+                        <div class="swiper-slide">
+                            {# video, img или picture #}
+                            {# для video нужен враппер .media-block-media__video #}
+                            {% if i % 2 == 0 %}
+                                <div class="media-block-media__video">
+                                    <img src="/assets/img/sample/career/video-poster.png"
+                                         class="media-block-media__video-poster" alt="">
+
+                                    <video src="https://ndminerals.com/media/documents/NM_banner-1124x750.h264.mp4"></video>
+                                    <button class="media-block-media__video-play"></button>
+                                </div>
+                            {% else %}
+                                <img src="/assets/img/sample/career/office.png" alt=""/>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-pagination slider-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/career/invite.html.twig' %}
+{% endblock %}

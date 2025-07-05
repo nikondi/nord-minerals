@@ -1,0 +1,15 @@
+<div class="iconed-text">
+    <div class="iconed-text__icon">
+        <img src="{{ item.icon }}" alt="">
+    </div>
+    <div class="iconed-text__text">
+        <div class="iconed-text__title">
+            {{ item.text | raw }}
+        </div>
+        {% if item.description %}
+            <div class="iconed-text__description">
+                {{ item.description | raw }}
+            </div>
+        {% endif %}
+    </div>
+</div>

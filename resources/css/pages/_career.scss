@@ -1,0 +1,59 @@
+.career-invite {
+  padding-top: 68px;
+  padding-bottom: 68px;
+
+  &__text {
+    font-family: 'Akzidenz-Grotesk Pro', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    margin-top: 8px;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .career-invite {
+    .block-heading {
+      margin-right: -10px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .career-first {
+    &,
+    .page-heading-wrapper {
+      overflow: visible;
+    }
+    .page-heading-background {
+      transform: translateY(90px);
+      width: 100%;
+      justify-content: center;
+      overflow: hidden;
+      img {
+        width: 610px;
+        max-width: unset;
+      }
+    }
+  }
+  .career-invite {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    .block-heading {
+      line-height: 32px;
+    }
+  }
+}
+
+.career-directions {
+  border-top: 4px solid #27B0C7;
+}

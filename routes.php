@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\AboutController;
+use App\Controllers\CareerController;
 use App\Controllers\ContactsController;
 use App\Controllers\NewsController;
 use App\Controllers\ProjectsController;
@@ -23,3 +24,5 @@ Router::get('/news/more', [NewsController::class, 'more']);
 
 Router::get('/projects', [ProjectsController::class, 'index']);
 Router::get('/projects/more', [ProjectsController::class, 'more']);
+
+Router::get('/career', CareerController::class);
