@@ -5,7 +5,6 @@
 .welcome-first {
   padding-top: 35px;
   padding-bottom: 50px;
-  height: 530px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -47,6 +46,7 @@
   --swiper-pagination-bottom: 0;
   position: relative;
   padding-bottom: 24px;
+  margin-top: 118px;
 }
 
 .wf-slider-wrapper {
@@ -127,7 +127,7 @@
     position: absolute;
     height: 600px;
     right: -67px;
-    bottom: -50px;
+    top: -18px;
   }
 }
 
@@ -137,7 +137,7 @@
     video, img {
       height: 500px;
       right: -150px;
-      bottom: 0;
+      top: 20px;
     }
   }
 }
@@ -201,7 +201,7 @@
   .wf-background {
     video, img {
       height: 430px;
-      bottom: 170px;
+      top: 100px;
       right: -280px;
     }
   }

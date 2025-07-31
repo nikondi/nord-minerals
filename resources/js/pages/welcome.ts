@@ -20,6 +20,7 @@ function initFirstSlider() {
     slidesPerView: 1,
     modules: [Navigation, Pagination],
     loop: true,
+    autoHeight: true,
     navigation: {
       prevEl: container?.querySelector('.big-slider-arrow--prev') as HTMLElement,
       nextEl: container?.querySelector('.big-slider-arrow--next') as HTMLElement,

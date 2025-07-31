@@ -16,13 +16,18 @@
                 <button class="big-slider-arrow big-slider-arrow--prev"></button>
                 <div class="wf-slider swiper">
                     <div class="swiper-wrapper">
-                        {% for i in 1..3 %}
+                        {% set slides = [
+                            {title: 'Инжиниринг<br />и проектирование', description: 'Инженеры Nord Minerals разрабатывают технологические решения и автоматизируют процессы на всех этапах проекта'},
+                            {title: 'Supervision, commissioning, and achieving technological parameters', description: 'Nord Minerals team carries out installation supervision, start-up and commissioning, taking full responsibility for achieving the designed process performance — both for individual pieces of equipment and for the entire mineral processing system'},
+                            {title: 'Инжиниринг<br />и проектирование', description: 'Инженеры Nord Minerals разрабатывают технологические решения и автоматизируют процессы на всех этапах проекта'},
+                        ] %}
+                        {% for slide in slides %}
                             <div class="swiper-slide wf-slide">
                                 <a href="/services/single" class="wf-slide__link">
                                     <div class="wf-slide__text">
-                                        <div class="wf-slide__title">Инжиниринг<br />и проектирование</div>
+                                        <div class="wf-slide__title">{{ slide.title | raw }}</div>
                                         <div class="wf-slide__description">
-                                            Инженеры Nord Minerals разрабатывают технологические решения и автоматизируют процессы на всех этапах проекта
+                                            {{ slide.description | raw }}
                                         </div>
                                     </div>
                                     <svg width="39" height="40" class="wf-slide__arrow">
