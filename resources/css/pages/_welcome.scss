@@ -10,6 +10,7 @@
   justify-content: space-between;
   position: relative;
   overflow: hidden;
+  min-height: 530px;
 
   &__title {
     font-weight: 400;
@@ -29,6 +30,7 @@
     color: #ffffff;
     margin-top: 15px;
     max-width: 640px;
+    height: 100px;
   }
 }
 
@@ -46,7 +48,7 @@
   --swiper-pagination-bottom: 0;
   position: relative;
   padding-bottom: 24px;
-  margin-top: 118px;
+  margin-top: 135px;
 }
 
 .wf-slider-wrapper {
@@ -127,18 +129,20 @@
     position: absolute;
     height: 600px;
     right: -67px;
-    top: -18px;
+    top: 25px;
   }
 }
 
 @media (max-width: 1100px) {
   .wf-background {
-
     video, img {
       height: 500px;
-      right: -150px;
-      top: 20px;
+      right: -220px;
+      top: 24px;
     }
+  }
+  .wf-slider-container {
+    margin-top: 93px;
   }
 }
 
