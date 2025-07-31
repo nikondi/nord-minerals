@@ -107,6 +107,64 @@
   p:not(:last-child) {
     margin-bottom: 1.1em;
   }
+
+  ol, ul {
+    padding-left: 20px;
+    &:not(:last-child) {
+      margin-bottom: 1.1em;
+    }
+  }
+  ul {
+    list-style-type: disc;
+  }
+  ol {
+    list-style: numeric;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.17em;
+  }
+
+  h4 {
+    font-size: 1em;
+  }
+
+  h5 {
+    font-size: .83em;
+  }
+
+  h6 {
+    font-size: .75em;
+  }
+
+  h1, h2, h3, h4,
+  h5, h6 {
+    font-weight: 600;
+    line-height: 1.05;
+    &:not(:last-child) {
+      margin-bottom: .9em;
+    }
+  }
+  p +,
+  ul +, {
+    h1, h2, h3, h4,
+    h5, h6 {
+      margin-top: 1em;
+    }
+  }
+
+  strong, b {
+    font-weight: 600;
+    font-size: 0.9em;
+  }
 }
 
 @media (max-width: 767px) {

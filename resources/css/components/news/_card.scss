@@ -1,5 +1,6 @@
 .news-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   border: 1px solid #FFFFFF;
   /*border-image-source: linear-gradient(180deg, #FFFFFF 0%, #65C9DA 100%);*/
   border-radius: 8px;
@@ -38,14 +39,14 @@
     font-size: 20px;
     line-height: 32px;
     letter-spacing: 0.05em;
-    text-transform: uppercase;
-    max-width: 50%;
+    flex: 1;
   }
 
   &__caption {
     display: flex;
     flex-direction: column;
     padding: 15px 20px 20px 20px;
+    flex: 1;
   }
 
   &__bottom {
@@ -60,6 +61,7 @@
     line-height: 16px;
     letter-spacing: 0.05em;
     color: #BCCBD6;
+
   }
   &__arrow {
     color: #65C9DA;

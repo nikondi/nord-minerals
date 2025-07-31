@@ -403,6 +403,9 @@
 
   .swiper-slide {
     height: auto;
+    .news-card {
+      height: 100%;
+    }
   }
 }
 
