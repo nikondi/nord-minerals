@@ -1,15 +1,22 @@
 import "swiper/css/bundle";
 import Swiper from "swiper";
-import {Pagination} from "swiper/modules";
+import {Navigation, Pagination} from "swiper/modules";
 
 export default function initMediaBlock() {
   document.querySelectorAll('.media-block-slider').forEach(function (el: HTMLElement) {
     const videos = el.querySelectorAll('.media-block-media__video');
 
+    const prevEl = el.querySelector('.big-slider-arrow--prev') as HTMLElement;
+    const nextEl = el.querySelector('.big-slider-arrow--next') as HTMLElement;
+
     const swiper = new Swiper(el, {
-      modules: [Pagination],
+      modules: [Pagination, Navigation],
       pagination: {
         el: el.querySelector('.swiper-pagination') as HTMLElement
+      },
+      navigation: {
+        prevEl,
+        nextEl
       },
       on: {
         transitionStart: function(){
@@ -30,16 +37,6 @@ export default function initMediaBlock() {
           video.play();
         else
           video.pause();
-      });
-
-      let isSeeking = false;
-
-      video.addEventListener('seeking', () => {
-        isSeeking = true;
-      });
-
-      video.addEventListener('seeked', () => {
-        isSeeking = false;
       });
 
       video.addEventListener('play', function () {
