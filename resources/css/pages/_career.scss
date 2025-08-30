@@ -18,6 +18,9 @@
     flex-wrap: wrap;
     margin-top: 24px;
   }
+  .career-dropdown {
+    margin-top: 24px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -56,4 +59,69 @@
 
 .career-directions {
   border-top: 4px solid #27B0C7;
+}
+
+.career-dropdown {
+  font-family: 'Akzidenz-Grotesk Pro', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  position: relative;
+
+  &__button {
+    color: #FFFFFF;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 24px;
+    background: linear-gradient(62.51deg, #27B0C7 -31.81%, #425666 104.01%);
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  &__list {
+    opacity: 0;
+    visibility: hidden;
+    padding-top: 15px;
+    transition: {
+      property: visibility, opacity, padding-top;
+      duration: .2s;
+    };
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+
+    > ul {
+      padding: 8px;
+      background: linear-gradient(62.51deg, #27B0C7 -31.81%, #425666 104.01%);
+      border-radius: 4px;
+      box-shadow: 0 10px 20px 0 #202F3AB2;
+    }
+    a {
+      color: #FFFFFF;
+      text-decoration: none;
+      display: block;
+      padding: 8px;
+      transition: .3s background-color;
+      border-radius: 8px;
+      &:hover {
+        background: rgba(66, 86, 102, 0.4);
+      }
+    }
+    &.active {
+      padding-top: 8px;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
 }

@@ -1,4 +1,4 @@
-import {initDirections, initGallery, initGeography, initHeader, initMediaBlock} from "@/components";
+import {initCareerInvite, initDirections, initGallery, initGeography, initHeader, initMediaBlock} from "@/components";
 import {aboutPage, contactsPage, newsPage, projectsPage, welcomePage} from "@/pages";
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initGallery();
   initGeography();
   initMediaBlock();
+  initCareerInvite();
   /* COMPONENTS */
 
   /* PAGES */

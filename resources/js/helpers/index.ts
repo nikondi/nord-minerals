@@ -17,3 +17,10 @@ export function getPointerPosition(e: MouseEvent & TouchEvent): CursorPosition {
     x: e.touches ? (e.touches[0]?.clientX || e.clientX) : e.x
   }
 }
+
+export function outsideClick(el: HTMLElement, callback: () => void) {
+  document.addEventListener('click', (event: MouseEvent) => {
+    if (el && !el.contains(event.target as Node))
+      callback();
+  }, true);
+}
